@@ -12,14 +12,14 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header container1">
         <nav class="header__nav">
             <ul class="header__nav-list">
                 <li class="nav-list-item">
                     <i class="fa-solid fa-gamepad"></i>
-                    <h1>Alura<span>Geek</span></h1>
+                    <h1>Alura<span class="geek">Geek</span></h1>
                     <div class="search-wrapper">
-                        <input class="search-input" type="text" placeholder="Search">
+                        <input class="search-input" type="text" placeholder="¿Qué deseas Buscar?">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
                             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                             class="feather feather-search" viewBox="0 0 24 24">
@@ -63,7 +63,7 @@
         </nav>
     </header>
     <main class="main">
-        <section class="banner">
+        <section class="banner container1">
             <div>
                 <h1 class="banner__title titulo1">Febrero Promocional</h1>
                 <p class="banner__text parrafo">Productos selecionados con 33% de descuento</p>
@@ -75,7 +75,8 @@
             <section class="products__category">
                 <div class="products__category-header">
                     <h2 class="titulo2">Star Wars</h2>
-                    <a class="link products__category-link" href="">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
+                    <a class="link products__category-link" href="">Ver todos <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 <ul class="products__category-list">
                     <li class="category__list-item">
@@ -119,7 +120,8 @@
             <section class="products__category">
                 <div class="products__category-header">
                     <h2 class="titulo2">Consolas</h2>
-                    <a class="link products__category-link" href="">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
+                    <a class="link products__category-link" href="">Ver todos <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 <ul class="products__category-list">
                     <li class="category__list-item">
@@ -163,7 +165,8 @@
             <section class="products__category">
                 <div class="products__category-header">
                     <h2 class="titulo2">Diversos</h2>
-                    <a class="link products__category-link" href="">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
+                    <a class="link products__category-link" href="">Ver todos <i
+                            class="fa-solid fa-arrow-right"></i></a>
                 </div>
                 <ul class="products__category-list">
                     <li class="category__list-item">
@@ -205,7 +208,68 @@
                 </ul>
             </section>
         </section>
+        <section class="contacto container bg-blue-sky" id="contacto">
+            <div class="contacto__logo nav-list-item">
+                <i class="fa-solid fa-gamepad"></i>
+                <h1>Alura<span class="geek">Geek</span></h1>
+            </div>
+            <ul class="contacto__list">
+                <li class="contacto__list-item">
+                    <a class="contacto__list-link">¿Quienes Somos?</a>
+                </li>
+                <li class="contacto__list-item">
+                    <a class="contacto__list-link">Politica de Privacidad</a>
+                </li>
+                <li class="contacto__list-item">
+                    <a class="contacto__list-link">Programa de Fidelidad</a>
+                </li>
+                <li class="contacto__list-item">
+                    <a class="contacto__list-link">Nuestras Tiendas</a>
+                </li>
+                <li class="contacto__list-item">
+                    <a class="contacto__list-link">¿Quiero ser Franquisiado?</a>
+                </li>
+                <li class="contacto__list-item">
+                    <a class="contacto__list-link">Anuncie Aqui</a>
+                </li>
+            </ul>
+            <form class="contacto__form" action="https://formsubmit.co/joel09llalli@gmail.com" name="contacto__form"
+                method="post">
+                <h2 class="contacto__title titulo2">Hable con Nosotros</h2>
+
+                <div class="group">
+                    <input class="contacto__form-input" name="name" id="name" type="text" required autocomplete="off">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label class="contacto__form-label">Nombre Completo (*)</label>
+                </div>
+                <div class="group">
+                    <textarea class="contacto__form-input" required cols="40" rows="5" name="mensaje" id="mensaje"
+                        minlength="10" autocomplete="off"></textarea>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label class="contacto__form-label">Mensaje (*)</label>
+                </div>
+                <div class="group">
+                    <button class="boton btn-primary" id="boton-form" type="submit"
+                        title="Enviar Mensaje y recargar">Enviar
+                        Mensaje</a>
+                </div>
+                <input type="hidden" name="_next" value="https://joe0919.github.io/portafolio_joel-llalli/">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+            </form>
+        </section>
     </main>
+    <section class="copyright-area">
+        <div class="container1">
+            <div class="copyright-text">
+                <p>Copyright &copy; Desarrollado por <strong>Joel Llallihuaman Giraldo</strong>
+                    <br><b>2023</b>
+                </p>
+            </div>
+        </div>
+    </section>
 </body>
 
 </html>

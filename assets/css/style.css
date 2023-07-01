@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Nunito+Sans&family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Pacifico&family=Raleway&family=Roboto&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Nunito+Sans&family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Pacifico&family=Raleway&family=Roboto&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Nunito+Sans&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Pacifico&family=Raleway&family=Roboto&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap");
 
 body {
@@ -15,11 +15,24 @@ body {
   --color-text-blue: #0069d9;
   --color-btn-primary: #0069d9;
   --color-btn-secundary: #343a40;
+
+  --font-color2: #253d50;
+  --font-color3: #e67e22;
+  --font-color4: #1c5d9f;
+
+  --color-bsky: #eaf2fd;
+
+  --color-input: #fff;
+  --color-bar: #5264ae;
 }
 
 [data-theme="dark"] {
   --color-logo: #2a7ae4;
   --color-text: #fff;
+}
+
+.bg-blue-sky {
+  background-color: var(--color-bsky);
 }
 
 /* CSS PARA EL HEADER */
@@ -41,7 +54,7 @@ body {
 .header__nav-list {
   list-style: none;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   padding: 0;
   margin: 0;
@@ -53,13 +66,17 @@ body {
 .nav-list-item .fa-gamepad {
   color: var(--color-logo);
   font-size: 1.7rem;
+  margin-right: 5px;
 }
-.nav-list-item h1 {
+.nav-list-item > h1 {
   margin: 0;
-  color: var(--color-logo);
-  font-size: 1.3rem;
-  font-weight: 800;
+  color: var(--color-text-b);
+  font-size: 1.5rem;
+  font-weight: 900;
   margin-right: 10px;
+}
+.nav-list-item .geek {
+  color: var(--color-logo);
 }
 
 .search-wrapper {
@@ -131,6 +148,7 @@ body {
   font-weight: 500;
   border-radius: 5px;
   transition: all 0.2s ease;
+  border: navajowhite;
 }
 .btn-primary {
   background-color: var(--color-btn-primary);
@@ -143,10 +161,13 @@ body {
 
 /* CCS para la seccion de productos */
 .container {
-  padding: 2rem 5rem;
+  padding: 4rem 6rem;
+}
+.container1 {
+  padding: 0 6rem;
 }
 
-.products__category{
+.products__category {
   margin: 3rem 0;
 }
 
@@ -163,7 +184,7 @@ body {
 }
 
 .category__list-item > :not(:first-child) {
-  margin: .7rem 0;
+  margin: 0.7rem 0;
 }
 
 .list__title {
@@ -180,4 +201,180 @@ body {
   font-weight: 700;
 }
 
+/* CSS para el formulario */
+
+.contacto {
+  display: flex;
+  justify-content: space-between;
+  gap: 100px;
+}
+.contacto__logo {
+  align-self: flex-start;
+}
+.contacto__list {
+  list-style: none;
+  line-height: 2.5;
+  padding: 0;
+  margin: 0;
+}
+.contacto__form {
+  flex-grow: 2;
+}
+
+/* form starting stylings ------------------------------- */
+.group {
+  position: relative;
+  margin-bottom: 40px;
+}
+.contacto__form-input {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #f7dc6f;
+  margin: 2rem 0;
+  background-color: var(--color-input);
+  color: var(--color-text-b);
+}
+.area {
+  resize: none;
+}
+.contacto__form-input:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+.contacto__form-label {
+  color: var(--font-color2);
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+
+/* active state */
+.contacto__form-input:focus ~ .contacto__form-label,
+.contacto__form-input.used ~ .contacto__form-label {
+  top: -20px;
+  font-size: 14px;
+  color: var(--font-title);
+}
+
+/* BOTTOM BARS ================================= */
+.bar {
+  display: block;
+  width: 100%;
+}
+.bar:before,
+.bar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: var(--color-bar);
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.bar:before {
+  left: 50%;
+}
+.bar:after {
+  right: 50%;
+}
+
+/* active state */
+.contacto__form-input:focus ~ .bar:before,
+.contacto__form-input:focus ~ .bar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 100%;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* active state */
+.contacto__form-input:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+.contacto__form-btn {
+  display: inline-block;
+  width: 150px;
+  box-sizing: border-box;
+  padding: 0.7rem 0.5rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  background-color: var(--btn-color2);
+  border-radius: 5px;
+  transition: all 0.2s ease;
+  text-align: center;
+  border: none;
+}
+.contacto__form-btn:disabled {
+  opacity: 0.7;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: #5264ae;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+/* CSS para el footer */
+.copyright-area {
+  /* background: #202020; */
+  padding: 25px 0;
+  text-align: center;
+}
+.copyright-text p {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--color-btn-secundary);
+  line-height: 1.6;
+}
+.copyright-text p strong {
+  color: #ff5e14;
+}
+.copyright-text p b {
+  font-size: 1.2rem;
+}
 
