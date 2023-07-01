@@ -52,30 +52,36 @@ body {
   width: 100%;
 }
 .header__nav-list {
-  list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0;
   margin: 0;
 }
+.nav-list-item-right {
+  display: flex;
+  justify-content: space-between;
+  width: 20%;
+  align-items: center;
+}
 .nav-list-item {
   display: flex;
   align-items: center;
+  width: 50%;
 }
-.nav-list-item .fa-gamepad {
+.logo {
   color: var(--color-logo);
   font-size: 1.7rem;
   margin-right: 5px;
 }
-.nav-list-item > h1 {
+.alura {
   margin: 0;
   color: var(--color-text-b);
   font-size: 1.5rem;
   font-weight: 900;
   margin-right: 10px;
 }
-.nav-list-item .geek {
+.geek {
   color: var(--color-logo);
 }
 
@@ -88,10 +94,10 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 480px;
+  max-width: 800px;
   color: var(--light-font);
-  box-shadow: 0 2px 6px 0 rgba(136, 148, 171, 0.2),
-    0 24px 20px -24px rgba(71, 82, 107, 0.1);
+  box-shadow: 0 2px 6px 0 rgba(136, 148, 171, 0.4),
+    0 24px 20px -24px rgba(71, 82, 107, 0.2);
   overflow: hidden;
 }
 
@@ -168,7 +174,11 @@ body {
 }
 
 .products__category {
-  margin: 3rem 0;
+  margin: 1rem 0;
+}
+
+.category-title{
+  margin: 2rem 0 .9rem;
 }
 
 .products__category-header {
@@ -213,10 +223,18 @@ body {
 }
 .contacto__list {
   list-style: none;
-  line-height: 2.5;
+  line-height: 3;
   padding: 0;
   margin: 0;
 }
+.contacto__logo {
+  display: flex;
+}
+.contacto__logo .alura,
+.contacto__logo .logo {
+  font-size: 2.5rem;
+}
+
 .contacto__form {
   flex-grow: 2;
 }
@@ -227,6 +245,7 @@ body {
   margin-bottom: 40px;
 }
 .contacto__form-input {
+  box-sizing: border-box;
   font-size: 18px;
   padding: 10px 10px 10px 5px;
   display: block;
@@ -263,7 +282,7 @@ body {
 .contacto__form-input.used ~ .contacto__form-label {
   top: -20px;
   font-size: 14px;
-  color: var(--font-title);
+  color: var(--color-btn-primary);
 }
 
 /* BOTTOM BARS ================================= */
@@ -377,4 +396,3 @@ body {
 .copyright-text p b {
   font-size: 1.2rem;
 }
-
