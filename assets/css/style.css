@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat:wght@600&family=Nunito+Sans&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Pacifico&family=Roboto&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Nunito+Sans&family=Nunito:wght@400;700&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Pacifico&family=Raleway&family=Roboto&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Nunito+Sans&family=Open+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Pacifico&family=Raleway&family=Roboto&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,500&display=swap");
 
 body {
   font-family: Nunito, ui-sans-serif, system-ui, -apple-system,
@@ -9,49 +10,16 @@ body {
 
 :root {
   --color-logo: #2a7ae4;
-  --color-text: #000;
-
-  --app-container: #f3f6fd;
-  --main-color: #1f1c2e;
-  --secondary-color: #4a4a4a;
-  --link-color: #1f1c2e;
-  --link-color-hover: #c3cff4;
-  --link-color-active: #fff;
-  --link-color-active-bg: #1f1c2e;
-  --projects-section: #fff;
-  --message-box-hover: #fafcff;
-  --message-box-border: #e9ebf0;
-  --more-list-bg: #fff;
-  --more-list-bg-hover: #f6fbff;
-  --more-list-shadow: rgba(209, 209, 209, 0.4);
-  --button-bg: #1f1c24;
-  --search-area-bg: #fff;
-  --star: #1ff1c2e;
-  --message-btn: #fff;
+  --color-text-b: #000;
+  --color-text-w: #fff;
+  --color-text-blue: #0069d9;
+  --color-btn-primary: #0069d9;
+  --color-btn-secundary: #343a40;
 }
 
 [data-theme="dark"] {
   --color-logo: #2a7ae4;
   --color-text: #fff;
-
-  --app-container: #1f1d2b;
-  --app-container: #111827;
-  --main-color: #fff;
-  --secondary-color: rgba(255, 255, 255, 0.8);
-  --projects-section: #1f2937;
-  --link-color: rgba(255, 255, 255, 0.8);
-  --link-color-hover: rgba(195, 207, 244, 0.1);
-  --link-color-active-bg: rgba(195, 207, 244, 0.2);
-  --button-bg: #1f2937;
-  --search-area-bg: #1f2937;
-  --message-box-hover: #243244;
-  --message-box-border: rgba(255, 255, 255, 0.1);
-  --star: #ffd92c;
-  --light-font: rgba(255, 255, 255, 0.8);
-  --more-list-bg: #2f3142;
-  --more-list-bg-hover: rgba(195, 207, 244, 0.1);
-  --more-list-shadow: rgba(195, 207, 244, 0.1);
-  --message-btn: rgba(195, 207, 244, 0.1);
 }
 
 /* CSS PARA EL HEADER */
@@ -62,8 +30,8 @@ body {
     rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px;
   height: 80px;
   display: flex;
-  align-items: center   ;
-  background-color: #1f1c24;
+  align-items: center;
+  /* background-color: #1f1c24; */
 }
 .header__nav {
   padding: 0;
@@ -91,11 +59,7 @@ body {
   color: var(--color-logo);
   font-size: 1.3rem;
   font-weight: 800;
-}
-
-.nav-list-link {
-  text-decoration: none;
-  color: var(--color-text);
+  margin-right: 10px;
 }
 
 .search-wrapper {
@@ -133,3 +97,87 @@ body {
   color: var(--main-color);
   opacity: 0.6;
 }
+/* CSS para el banner */
+
+.banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("../img/banner1.jpg") no-repeat center / cover;
+  height: 300px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding-left: 2rem;
+}
+
+.titulo1 {
+  color: var(--color-text-w);
+}
+.titulo2 {
+  color: var(--color-text-b);
+}
+.titulo3 {
+  color: var(--color-text-b);
+}
+.parrafo {
+  color: #fff;
+}
+.boton {
+  text-align: center;
+  display: block;
+  width: 140px;
+  box-sizing: border-box;
+  padding: 0.8rem 0;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 5px;
+  transition: all 0.2s ease;
+}
+.btn-primary {
+  background-color: var(--color-btn-primary);
+  color: var(--color-text-w);
+}
+.btn-secundary {
+  background-color: var(--color-btn-secundary);
+  color: var(--color-text-w);
+}
+
+/* CCS para la seccion de productos */
+.container {
+  padding: 2rem 5rem;
+}
+
+.products__category{
+  margin: 3rem 0;
+}
+
+.products__category-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.products__category-list {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.category__list-item > :not(:first-child) {
+  margin: .7rem 0;
+}
+
+.list__title {
+  font-weight: normal;
+}
+.list__price {
+  font-weight: 900;
+  font-family: "Raleway", sans-serif;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--color-text-blue);
+  font-weight: 700;
+}
+
+

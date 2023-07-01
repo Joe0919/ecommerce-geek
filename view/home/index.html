@@ -30,7 +30,7 @@
                     </div>
                 </li>
                 <li class="nav-list-item">
-                    <a href="#" class="nav-list-link" title="Login">
+                    <a href="#" class="boton btn-secundary" title="Login">
                         <i class="fa-solid fa-user"></i>
                         <span>Login</span>
                     </a>
@@ -60,53 +60,149 @@
                     </label>
                 </li>
             </ul>
-
         </nav>
     </header>
     <main class="main">
         <section class="banner">
-            <h1 class="banner__title titulo1">Febrero Promocional</h1>
-            <p class="banner__text parrafo">Productos selecionados con 33% de descuento</p>
-            <a href="" class="boton">Ver Productos</a>
+            <div>
+                <h1 class="banner__title titulo1">Febrero Promocional</h1>
+                <p class="banner__text parrafo">Productos selecionados con 33% de descuento</p>
+                <a href="" class="boton btn-primary">Ver Productos</a>
+            </div>
         </section>
-        <section class="products">
+
+        <section class="container">
             <section class="products__category">
-                <div>
+                <div class="products__category-header">
                     <h2 class="titulo2">Star Wars</h2>
-                    <a class="products__category-boton" href="">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
-                    <ul class="products__category-list">
-                        <li class="category__list-item">
-                            <img class="list__img" src="../../assets/img/star-wars1.png" alt="Foto de Producto">
-                            <p class="list__price">$ 60.00</p>
-                            <a class="list__boton" href="">Ver Producto</a>
-                        </li>
-                        <li class="category__list-item">
-                            <img class="list__img" src="../../assets/img/star-wars2.png" alt="Foto de Producto">
-                            <p class="list__price">$ 60.00</p>
-                            <a class="list__boton" href="">Ver Producto</a>
-                        </li>
-                        <li class="category__list-item">
-                            <img class="list__img" src="../../assets/img/star-wars3.png" alt="Foto de Producto">
-                            <p class="list__price">$ 60.00</p>
-                            <a class="list__boton" href="">Ver Producto</a>
-                        </li>
-                        <li class="category__list-item">
-                            <img class="list__img" src="../../assets/img/star-wars4.png" alt="Foto de Producto">
-                            <p class="list__price">$ 60.00</p>
-                            <a class="list__boton" href="">Ver Producto</a>
-                        </li>
-                        <li class="category__list-item">
-                            <img class="list__img" src="../../assets/img/star-wars5.png" alt="Foto de Producto">
-                            <p class="list__price">$ 60.00</p>
-                            <a class="list__boton" href="">Ver Producto</a>
-                        </li>
-                        <li class="category__list-item">
-                            <img class="list__img" src="../../assets/img/star-wars6.png" alt="Foto de Producto">
-                            <p class="list__price">$ 60.00</p>
-                            <a class="list__boton" href="">Ver Producto</a>
-                        </li>
-                    </ul>
+                    <a class="link products__category-link" href="">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
+                <ul class="products__category-list">
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/star-wars1.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton link" href="">Ver Producto</a>
+                    </li>
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/star-wars2.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton" href="">Ver Producto</a>
+                    </li>
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/star-wars3.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton" href="">Ver Producto</a>
+                    </li>
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/star-wars4.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton" href="">Ver Producto</a>
+                    </li>
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/star-wars5.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton" href="">Ver Producto</a>
+                    </li>
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/star-wars6.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton" href="">Ver Producto</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="products__category">
+                <div class="products__category-header">
+                    <h2 class="titulo2">Consolas</h2>
+                    <a class="link products__category-link" href="">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <ul class="products__category-list">
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/console1.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton link" href="">Ver Producto</a>
+                    </li>
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/console2.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton" href="">Ver Producto</a>
+                    </li>
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/console3.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton" href="">Ver Producto</a>
+                    </li>
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/console4.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton" href="">Ver Producto</a>
+                    </li>
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/console5.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton" href="">Ver Producto</a>
+                    </li>
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/console6.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton" href="">Ver Producto</a>
+                    </li>
+                </ul>
+            </section>
+            <section class="products__category">
+                <div class="products__category-header">
+                    <h2 class="titulo2">Diversos</h2>
+                    <a class="link products__category-link" href="">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <ul class="products__category-list">
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/various1.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton link" href="">Ver Producto</a>
+                    </li>
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/various2.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton" href="">Ver Producto</a>
+                    </li>
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/various3.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton" href="">Ver Producto</a>
+                    </li>
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/various4.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton" href="">Ver Producto</a>
+                    </li>
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/various5.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton" href="">Ver Producto</a>
+                    </li>
+                    <li class="category__list-item">
+                        <img class="list__img" src="../../assets/img/various6.png" alt="Foto de Producto">
+                        <h3 class="list__title titulo3">Producto XYZ</h3>
+                        <p class="list__price">$ 60.00</p>
+                        <a class="link list__boton" href="">Ver Producto</a>
+                    </li>
+                </ul>
             </section>
         </section>
     </main>
