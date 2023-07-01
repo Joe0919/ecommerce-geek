@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - AluraGeek</title>
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/toggle.css">
+    <script src="https://kit.fontawesome.com/6b07c2fbaa.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <ul class="header__nav-list">
+                <li class="nav-list-item">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <h1>Alura<span>Geek</span></h1>
+                    <div class="search-wrapper">
+                        <input class="search-input" type="text" placeholder="Search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="feather feather-search" viewBox="0 0 24 24">
+                            <defs></defs>
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="M21 21l-4.35-4.35"></path>
+                        </svg>
+                    </div>
+                </li>
+                <li class="nav-list-item">
+                    <a href="#" class="nav-list-link" title="Login">
+                        <i class="fa-solid fa-user"></i>
+                        <span>Login</span>
+                    </a>
+                </li>
+                <li class="nav-list-item" title="Cambiar Tema">
+                    <label class="label" id="theme-switch">
+                        <span class="toggle" id="toggle">
+                            <input class="toggle-input" type="checkbox" id="checkbox_theme" />
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                viewBox="0 0 32 32" id="moon" class="icon">
+                                <title>moon-fill</title>
+                                <path
+                                    d="M24.633 22.184c-8.188 0-14.82-6.637-14.82-14.82 0-2.695 0.773-5.188 2.031-7.363-6.824 1.968-11.844 8.187-11.844 15.644 0 9.031 7.32 16.355 16.352 16.355 7.457 0 13.68-5.023 15.648-11.844-2.18 1.254-4.672 2.028-7.367 2.028z">
+                                </path>
+                            </svg>
+
+                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                viewBox="0 0 32 32" id="sun" class="icon">
+                                <title>sun-fill</title>
+                                <path
+                                    d="M16.001 8c-4.418 0-8 3.582-8 8s3.582 8 8 8c4.418 0 7.999-3.582 7.999-8s-3.581-8-7.999-8v0zM14 2c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM4 6c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM2 14c1.105 0 2 0.895 2 2 0 1.107-0.895 2-2 2s-2-0.893-2-2c0-1.105 0.895-2 2-2zM4 26c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM14 30c0-1.109 0.895-2 2-2 1.108 0 2 0.891 2 2 0 1.102-0.892 2-2 2-1.105 0-2-0.898-2-2zM24 26c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM30 18c-1.104 0-2-0.896-2-2 0-1.107 0.896-2 2-2s2 0.893 2 2c0 1.104-0.896 2-2 2zM24 6c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2z">
+                                </path>
+                            </svg>
+
+                            <span class="toggle__btn" id="toggle__btn" />
+                        </span>
+                    </label>
+                </li>
+            </ul>
+
+        </nav>
+    </header>
+    <main class="main">
+        <section class="banner">
+            <h1 class="banner__title titulo1">Febrero Promocional</h1>
+            <p class="banner__text parrafo">Productos selecionados con 33% de descuento</p>
+            <a href="" class="boton">Ver Productos</a>
+        </section>
+        <section class="products">
+            <section class="products__category">
+                <div>
+                    <h2 class="titulo2">Star Wars</h2>
+                    <a class="products__category-boton" href="">Ver todos <i class="fa-solid fa-arrow-right"></i></a>
+                    <ul class="products__category-list">
+                        <li class="category__list-item">
+                            <img class="list__img" src="../../assets/img/star-wars1.png" alt="Foto de Producto">
+                            <p class="list__price">$ 60.00</p>
+                            <a class="list__boton" href="">Ver Producto</a>
+                        </li>
+                        <li class="category__list-item">
+                            <img class="list__img" src="../../assets/img/star-wars2.png" alt="Foto de Producto">
+                            <p class="list__price">$ 60.00</p>
+                            <a class="list__boton" href="">Ver Producto</a>
+                        </li>
+                        <li class="category__list-item">
+                            <img class="list__img" src="../../assets/img/star-wars3.png" alt="Foto de Producto">
+                            <p class="list__price">$ 60.00</p>
+                            <a class="list__boton" href="">Ver Producto</a>
+                        </li>
+                        <li class="category__list-item">
+                            <img class="list__img" src="../../assets/img/star-wars4.png" alt="Foto de Producto">
+                            <p class="list__price">$ 60.00</p>
+                            <a class="list__boton" href="">Ver Producto</a>
+                        </li>
+                        <li class="category__list-item">
+                            <img class="list__img" src="../../assets/img/star-wars5.png" alt="Foto de Producto">
+                            <p class="list__price">$ 60.00</p>
+                            <a class="list__boton" href="">Ver Producto</a>
+                        </li>
+                        <li class="category__list-item">
+                            <img class="list__img" src="../../assets/img/star-wars6.png" alt="Foto de Producto">
+                            <p class="list__price">$ 60.00</p>
+                            <a class="list__boton" href="">Ver Producto</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </section>
+    </main>
+</body>
+
+</html>

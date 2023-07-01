@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:900&display=swap");
+
+:root {
+  --color-day-bg: #0984e3;
+  --color-day-icon: #ffe4a1;
+  --color-night-bg: #032b43;
+  --color-night-icon: #b9c6d3;
+  --color-light: #ffffff;
+  --color-dark: #4a4a4a;
+  --color-shadow-light: rgba(37, 24, 24, 0.15);
+  --color-shadow-mid: rgba(109, 105, 105, 0.25);
+  --color-shadow-dark: rgba(0, 0, 0, 0.9);
+}
+
+.toggle-input[type="checkbox"] {
+  position: absolute;
+  left: -10000px;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  align-self: center;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+
+
+
+.toggle {
+  background-color: var(--color-day-bg);
+  border-radius: 1.6em;
+  border: 1px solid var(--color-light);
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.2rem;
+  position: relative;
+  height: 1.25rem;
+  width: 2.5rem;
+}
+
+.icon {
+  position: absolute;
+  width: 55%;
+  height: 55%;
+  top: 20%;
+}
+
+#sun {
+  fill: var(--color-day-icon);
+  right: 0;
+}
+
+#moon {
+  fill: var(--color-night-icon);
+  left: 0px;
+}
+
+.toggle__btn {
+  background-color: var(--color-light);
+  box-shadow: inset 5px -5px 6px var(--color-shadow-light),
+    0px 0px 2px var(--color-shadow-mid);
+  border-radius: 1em;
+  display: inline-block;
+  height: 72%;
+  width: 40%;
+  position: absolute;
+  left: 5px;
+  transition: left 0.3s ease;
+}
+
+.toggle.dark {
+  background-color: var(--color-night-bg);
+}
+.toggle__btn.dark {
+  left: 55%;
+}
