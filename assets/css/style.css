@@ -69,6 +69,15 @@ body {
   align-items: center;
   width: 50%;
 }
+.nav-list-link{
+  text-decoration: none;
+  display: flex;
+  margin-right: 20px;
+}
+.nav-list-link > i{
+  color: var(--color-logo);
+  font-size: 1.5rem;
+}
 .logo {
   color: var(--color-logo);
   font-size: 1.7rem;
@@ -79,7 +88,7 @@ body {
   color: var(--color-text-b);
   font-size: 1.5rem;
   font-weight: 900;
-  margin-right: 10px;
+  margin: 0 10px 0 5px;
 }
 .geek {
   color: var(--color-logo);
@@ -153,9 +162,14 @@ body {
   text-decoration: none;
   font-weight: 500;
   border-radius: 5px;
-  transition: all 0.2s ease;
-  border: navajowhite;
+  transition: all 0.4s ease;
+  border: none;
 }
+
+.boton:hover{
+  transform: scale(1.05);
+}
+
 .btn-primary {
   background-color: var(--color-btn-primary);
   color: var(--color-text-w);

@@ -7,7 +7,8 @@
     <title>Home - AluraGeek</title>
     <link rel="stylesheet" href="../../assets/css/normalize.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/toggle.css">
+    <link rel="stylesheet" href="../../assets/css/components/toggle.css">
+    <link rel="shortcut icon" href="../../assets/img/logo2.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/6b07c2fbaa.js" crossorigin="anonymous"></script>
 </head>
 
@@ -16,8 +17,10 @@
         <nav class="header__nav">
             <div class="header__nav-list">
                 <div class="nav-list-item">
-                    <i class="fa-solid fa-gamepad"></i>
-                    <h1 class="alura">Alura<span class="geek">Geek</span></h1>
+                    <a class="nav-list-link" href="../home/index.html">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <h1 class="alura">Alura<span class="geek">Geek</span></h1>
+                    </a>
                     <div class="search-wrapper">
                         <input class="search-input" type="text" placeholder="¿Qué deseas Buscar?">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
@@ -31,7 +34,7 @@
                 </div>
                 <div class="nav-list-item-right">
                     <div>
-                        <a href="#" class="boton btn-secundary" title="Login">
+                        <a href="../login/index.html" class="boton btn-secundary" title="Login">
                             <i class="fa-solid fa-user"></i>
                             <span>Login</span>
                         </a>
