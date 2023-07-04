@@ -1,7 +1,5 @@
 import { productService } from "../../services/products-service.js";
 
-
-
 const addNewLine = (name, price, imageURL, id) => {
   const linea = document.createElement("li");
   linea.classList.add("category__list-item");
@@ -90,17 +88,7 @@ formulario.addEventListener("submit", (evento) => {
       productService
         .crearProducto(name, price, category, newimageURL, description)
         .then(() => {
-          evento.preventDefault();
-          modal.classList.remove("fadeIn");
-          modal.classList.add("fadeOut");
-
-          modal.style.display = "none";
-
-          Swal.fire(
-            "!Hecho¡",
-            "Los datos del producto fueron guardados",
-            "success"
-          );
+          window.location.href = "../../view/products/create-success.html";
         })
         .catch((err) => console.log(err));
     }
