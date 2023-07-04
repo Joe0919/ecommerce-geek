@@ -29,9 +29,6 @@
   text-transform: uppercase;
 }
 
-
-
-
 .toggle {
   background-color: var(--color-day-bg);
   border-radius: 1.6em;
@@ -40,7 +37,7 @@
   margin-left: 0.5rem;
   padding: 0.2rem;
   position: relative;
-  height: 1.25rem;
+  height: 1.4rem;
   width: 2.5rem;
 }
 

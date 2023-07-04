@@ -1,0 +1,76 @@
+{
+  "profile": [
+    {
+      "id": 1,
+      "name": "Admin",
+      "email": "admin@alurageek.com",
+      "password": "Admin"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Consola 1",
+      "price": "60.00",
+      "category": "Consola",
+      "imageURL": "../../assets/img/console1.png",
+      "description": "lorem"
+    },
+    {
+      "id": 2,
+      "name": "Consola 2",
+      "price": "80.00",
+      "category": "Consola",
+      "imageURL": "../../assets/img/console2.png",
+      "description": "lorem"
+    },
+    {
+      "id": 3,
+      "name": "Consola 3",
+      "price": "80.00",
+      "category": "Consola",
+      "imageURL": "../../assets/img/console3.png",
+      "description": "lorem"
+    },
+    {
+      "id": 4,
+      "name": "Consola 4",
+      "price": "80.00",
+      "category": "Consola",
+      "imageURL": "../../assets/img/console4.png",
+      "description": "lorem"
+    },
+    {
+      "id": 5,
+      "name": "Consola 5",
+      "price": "80.00",
+      "category": "Consola",
+      "imageURL": "../../assets/img/console5.png",
+      "description": "lorem"
+    },
+    {
+      "id": 6,
+      "name": "Consola 6",
+      "price": "80.00",
+      "category": "Consola",
+      "imageURL": "../../assets/img/console6.png",
+      "description": "lorem"
+    },
+    {
+      "id": "cf302046-82f8-483c-8ebc-911974ef6c6b",
+      "name": "",
+      "price": "",
+      "category": "Consola",
+      "imageURL": "../../assets/img/various1.png",
+      "description": ""
+    },
+    {
+      "id": "b6abb3bc-df40-433f-b4f4-6989ccc1b7eb",
+      "name": "joel09llalli@gmail.com",
+      "price": "45",
+      "category": "Consola",
+      "imageURL": "../../assets/img/various2.png",
+      "description": "dafgadfg"
+    }
+  ]
+}

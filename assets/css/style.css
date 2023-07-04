@@ -87,6 +87,7 @@ body {
 .nav-list-link > i{
   color: var(--color-logo);
   font-size: 1.5rem;
+  margin: auto;
 }
 .logo {
   color: var(--color-logo);
@@ -153,9 +154,13 @@ body {
 
 .titulo1 {
   color: var(--color-text-w);
+  font-size: 1.6rem;
+  font-weight: 800;
 }
 .titulo2 {
   color: var(--color-text-b);
+  font-size: 1.5rem;
+  font-weight: 800;
 }
 .titulo3 {
   color: var(--color-text-b);
@@ -228,13 +233,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 .products__category-list {
   display: flex;
   list-style: none;
-  justify-content: space-between;
   padding: 0;
   width: 100%;
+  column-gap: .8%;
 }
 .div-img{
   overflow: hidden;
@@ -288,8 +294,11 @@ body {
 .contacto__logo {
   display: flex;
 }
-.contacto__logo .alura,
 .contacto__logo .logo {
+  font-size: 2.5rem;
+  margin: auto;
+}
+.contacto__logo .alura {
   font-size: 2.5rem;
 }
 
