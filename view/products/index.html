@@ -16,12 +16,12 @@
 </head>
 
 <body>
-    <!-- The Modal -->
+    <!-- MODAL DE CREACIÓN DE PRODUCTOS -->
     <div class="main-modal fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
         style="background: rgba(0,0,0,.7);">
         <div
             class="border border-teal-500 shadow-lg modal-container bg-white w-5/12  mx-auto rounded shadow-lg z-50 overflow-y-auto">
-            <form class="modal-content py-4 text-left px-6" data-form-product>
+            <form class="modal-content py-4 text-left px-6" data-form-productC>
                 <!--Title-->
                 <div class="flex justify-between items-center">
                     <p class="text-2xl font-bold"></p>
@@ -38,7 +38,7 @@
                 <div class="relative font-medium flex items-center content-center">
                     <div class="mr-auto ml-auto w-full">
                         <div class="w-full max-w-md mr-auto ml-auto mt-4 mb-1 text-center">
-                            <h1 class="text-gray-800 block text-3xl font-extrabold font-title">Gestión de Productos</h1>
+                            <h1 class="text-gray-800 block text-3xl font-extrabold font-title">Creación de Productos</h1>
                         </div>
                         <div class="w-full mr-auto ml-auto mt-4">
                             <div class="bg-white shadow-lg rounded-md px-3 py-3 mb-3 ml-auto mr-auto pt-4"
@@ -61,7 +61,8 @@
                                     </label>
                                     <input
                                         class="shadow-sm appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 text-sm leading-tight focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                                        id="username" type="number" placeholder="Ingrese precio..." data-price required>
+                                        id="username" type="number" placeholder="Ingrese precio..." data-price required
+                                        min="1" pattern="^[0-9]+">
                                 </div>
                                 <div class="mb-4 relative">
                                     <label
@@ -110,16 +111,106 @@
                 </div>
                 <!--Footer-->
                 <div class="flex justify-end pt-2">
-                    <button
-                        class="focus:outline-none modal-close px-4 bg-gray-400 p-3 rounded-lg text-black hover:bg-gray-300">Cancelar</button>
+                    <input type="button" class="focus:outline-none modal-close px-4 bg-gray-400 p-3 rounded-lg text-black hover:bg-gray-300 btn-close" value="Cancelar">
                     <button type="submit"
                         class="focus:outline-none px-4 bg-teal-500 p-3 ml-3 rounded-lg text-white enabled:hover:bg-teal-400 disabled:opacity-60"
-                        data-btn-submit>Confirmar</button>
+                        data-btn-submit>Guardar</button>
                 </div>
             </form>
         </div>
     </div>
-    
+
+    <!-- MODAL DE EDICIÓN DE PRODUCTOS -->
+    <div class="main-modalE fixed w-full h-100 inset-0 z-50 overflow-hidden flex justify-center items-center animated fadeIn faster"
+        style="background: rgba(0,0,0,.7);">
+        <div
+            class="border border-teal-500 shadow-lg modal-container bg-white w-5/12  mx-auto rounded shadow-lg z-50 overflow-y-auto">
+            <form class="modal-content py-4 text-left px-6" data-form-productE>
+                <!--Title-->
+                <div class="flex justify-between items-center">
+                    <p class="text-2xl font-bold"></p>
+                    <div class="modal-closeE cursor-pointer z-50">
+                        <svg class="fill-current text-black" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                            viewBox="0 0 18 18">
+                            <path
+                                d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+                            </path>
+                        </svg>
+                    </div>
+                </div>
+                <!--Body-->
+                <div class="relative font-medium flex items-center content-center">
+                    <div class="mr-auto ml-auto w-full">
+                        <div class="w-full max-w-md mr-auto ml-auto mt-4 mb-1 text-center">
+                            <h1 class="text-gray-800 block text-3xl font-extrabold font-title">Edición de Productos</h1>
+                        </div>
+                        <div class="w-full mr-auto ml-auto mt-4">
+                            <div class="bg-white shadow-lg rounded-md px-3 py-3 mb-3 ml-auto mr-auto pt-4"
+                                data-form-product>
+                                <div class="mb-4">
+                                    <label
+                                        class="block text-gray-700 text-sm font-medium mb-2 after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-bold text-slate-700"
+                                        for="username"> Nombre
+                                        del
+                                        Producto: </label>
+                                    <input
+                                        class="shadow-sm appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 text-sm leading-tight focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                                        id="username" type="text" placeholder="Ingrese nombre..." data-nameE required
+                                        minlength="3">
+                                </div>
+                                <div class="mb-4">
+                                    <label
+                                        class="block text-gray-700 text-sm font-medium mb-2 after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-bold text-slate-700"
+                                        for="username"> Precio ($):
+                                    </label>
+                                    <input
+                                        class="shadow-sm appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 text-sm leading-tight focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                                        id="username" type="number" placeholder="Ingrese precio..." data-priceE required
+                                        min="1" pattern="^[0-9]+">
+                                </div>
+                                <div class="mb-4 relative">
+                                    <label
+                                        class="block text-gray-700 text-sm font-medium mb-2 after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-bold text-slate-700"
+                                        for="username">
+                                        Categoria:
+                                    </label>
+                                    <select name="sel-category" id="sel-category"
+                                        class="shadow-sm appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 text-sm leading-tight focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                                        data-categoryE required>
+                                        <option value="Consola">Consola</option>
+                                        <option value="Star Wars">Star Wars</option>
+                                        <option value="Diversos">Diversos</option>
+                                    </select>
+                                    <div
+                                        class="pointer-events-none absolute inset-y-0 right-0 top-8 flex items-center pr-4 text-gray-500">
+                                        <i class="fas fa-angle-down text-gray-500"></i>
+                                    </div>
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-gray-700 text-sm font-medium mb-2" for="username">
+                                        Descripción:
+                                    </label>
+                                    <textarea placeholder="Ingrese descripcion..." data-descriptionE
+                                        class="shadow-sm appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 text-sm leading-tight focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
+                                        cols="30" rows="3"></textarea>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Footer-->
+                <div class="flex justify-end pt-2">
+                    <input type="hidden" name="id-input" id="id-input" data-idE>
+                    <input type="button" class="focus:outline-none modal-closeE px-4 bg-gray-400 p-3 rounded-lg text-black hover:bg-gray-300 btn-close" value="Cancelar">
+                    <button type="submit"
+                        class="focus:outline-none px-4 bg-teal-500 p-3 ml-3 rounded-lg text-white enabled:hover:bg-teal-400 disabled:opacity-60"
+                        data-btn-submit>Editar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <header class="header container1 ">
         <nav class="header__nav">
             <div class="header__nav-list">
