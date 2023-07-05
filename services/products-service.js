@@ -5,13 +5,13 @@ const listProducts = () =>
     .catch((error) => alert(error));
 
 // CREAR DATOS
-const crearProducto = (id, name, price, category, description, imageURL) => {
+const crearProducto = (name, price, category, description, imageURL, id) => {
   return fetch("http://localhost:3000/products", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ id, name, price, category, description, imageURL }),
+    body: JSON.stringify({  name, price, category, description, imageURL, id}),
   });
 };
 
@@ -22,17 +22,25 @@ const detalleProducto = (id) => {
   );
 };
 // EDITAR LOS DATOS INGRESADOS
-const actualizarProducto = (id, name, price, category, description) => {
+const actualizarProducto = (id, name, price, category, description, imageURL) => {
   return fetch(`http://localhost:3000/products/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ name, price, category, description }),
+    body: JSON.stringify({ name, price, category, description, imageURL }),
   })
     .then((respuesta) => respuesta)
     .catch((err) => console.log(err));
 };
+
+//PARA ELIMINAR EL PRODUCTO SELECCIONADO
+const eliminarProducto = (id) => {
+  return fetch(`http://localhost:3000/products/${id}`, {
+    method: "DELETE",
+  });
+};
+
 
 // EXPORTAR LAS FUNCIONES ANÓNIMAS
 export const productService = {
@@ -40,4 +48,5 @@ export const productService = {
   crearProducto,
   detalleProducto,
   actualizarProducto,
+  eliminarProducto
 };

@@ -9,67 +9,52 @@
   ],
   "products": [
     {
-      "id": 1,
       "name": "Consola 1",
       "price": "60.00",
       "category": "Consola",
+      "description": "lorem",
       "imageURL": "../../assets/img/console1.png",
-      "description": "lorem"
+      "id": 1
     },
     {
-      "id": 2,
       "name": "Consola 2",
       "price": "80.00",
       "category": "Consola",
+      "description": "lorem",
       "imageURL": "../../assets/img/console2.png",
-      "description": "lorem"
+      "id": 2
     },
     {
-      "id": 3,
       "name": "Consola 3",
       "price": "80.00",
       "category": "Consola",
+      "description": "lorem",
       "imageURL": "../../assets/img/console3.png",
-      "description": "lorem"
+      "id": 3
     },
     {
-      "id": 4,
       "name": "Consola 4",
       "price": "80.00",
       "category": "Consola",
+      "description": "lorem",
       "imageURL": "../../assets/img/console4.png",
-      "description": "lorem"
+      "id": 4
     },
     {
-      "id": 5,
       "name": "Consola 5",
       "price": "80.00",
       "category": "Consola",
+      "description": "lorem",
       "imageURL": "../../assets/img/console5.png",
-      "description": "lorem"
+      "id": 5
     },
     {
-      "id": 6,
       "name": "Consola 6",
       "price": "80.00",
       "category": "Consola",
+      "description": "lorem",
       "imageURL": "../../assets/img/console6.png",
-      "description": "lorem"
-    },
-    {
-      "name": "mando",
-      "price": "60",
-      "category": "Diversos",
-      "description": "mando para play",
-      "id": "b6abb3bc-df40-433f-b4f4-6989ccc1b7eb"
-    },
-    {
-      "id": "88182c6a-0142-494f-89c9-898f9d941503",
-      "name": "hola",
-      "price": "1",
-      "category": "Diversos",
-      "imageURL": "",
-      "description": "holaa"
+      "id": 6
     }
   ]
 }

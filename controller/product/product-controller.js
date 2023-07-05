@@ -14,11 +14,15 @@ const addNewLine = (name, price, imageURL, id) => {
     <a class="link list__boton link" href="#">Ver Producto</a>
     <div class="list__icons">
     <i class="fa-solid fa-pen btn-editar" title="Editar"></i>
-    <i class="fa-solid fa-trash btn-delete" title="Eliminar"></i>
+    <i class="fa-solid fa-trash btn-delete" id="${id}" title="Eliminar"></i>
     </div>
     <input class="id-product" name="id-product" type="hidden" value="${id}">
       `;
+
   linea.innerHTML = contenido;
+
+  // Puedes colocar aca los eventos al cargar el DOM
+
   return linea;
 };
 
@@ -91,7 +95,7 @@ formulario.addEventListener("submit", (event) => {
       // newimageURL = "../../assets/img/" + id + "." + extimage;
 
       productService
-        .crearProducto(id, name, price, category, description, newimageURL)
+        .crearProducto(name, price, category, description, newimageURL, id)
         .then(() => {
           window.location.href = "../../view/products/create-success.html";
         })
@@ -113,15 +117,17 @@ const obtenerInformacion = async (id) => {
   const price = document.querySelector("[data-priceE]");
   const category = document.querySelector("[data-categoryE]");
   const description = document.querySelector("[data-descriptionE]");
+  const imageURL = document.querySelector("[data-imageE]");
   const idinput = document.querySelector("[data-idE]");
   try {
     const product = await productService.detalleProducto(id);
 
-    if (product.name && product.price && product.category) {
+    if (product.name && product.price && product.category && product.imageURL) {
       name.value = product.name;
       price.value = product.price;
       category.value = product.category;
       description.value = product.description;
+      imageURL.value = product.imageURL;
       idinput.value = id;
 
       modalE.classList.remove("fadeOut");
@@ -144,11 +150,12 @@ const formularioE = document.querySelector("[data-form-productE]"); //FORMULARIO
 
 formularioE.addEventListener("submit", (evento) => {
   evento.preventDefault();
+  const id = document.querySelector("[data-idE]").value;
   const name = document.querySelector("[data-nameE]").value;
   const price = document.querySelector("[data-priceE]").value;
   const category = document.querySelector("[data-categoryE]").value;
   const description = document.querySelector("[data-descriptionE]").value;
-  const id = document.querySelector("[data-idE]").value;
+  const imageURL = document.querySelector("[data-imageE]").value;
 
   console.log(name);
   console.log(price);
@@ -168,7 +175,7 @@ formularioE.addEventListener("submit", (evento) => {
   }).then((result) => {
     if (result.isConfirmed) {
       productService
-        .actualizarProducto(id, name, price, category, description)
+        .actualizarProducto(id, name, price, category, description, imageURL)
         .then(() => {
           window.location.href = "../../view/products/update-success.html";
         })
@@ -182,6 +189,7 @@ window.addEventListener("load", () => {
   // REALIZAMOS UNA DELEGACIÓN DE EVENTOS PARA LOS BOTONES DE EDICIÓN Y BORRADO DE PRODUCTOS
   list.addEventListener("click", (e) => {
     if (
+      // si el icono es Editar
       e.target &&
       e.target.tagName === "I" &&
       e.target.classList[2] === "btn-editar"
@@ -189,11 +197,32 @@ window.addEventListener("load", () => {
       let idinput = e.target.closest("li").lastElementChild.value;
       obtenerInformacion(idinput);
     } else if (
+      // si el icono es Borrar
       e.target &&
       e.target.tagName === "I" &&
       e.target.classList[2] === "btn-delete"
     ) {
-      alert("boton eliminar");
+      console.log(e.target.id);
+      Swal.fire({
+        title: "¿Estás seguro?",
+        text: "Eliminar los datos del producto",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "Si, eliminar",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          const id = e.target.id;
+          productService
+            .eliminarProducto(id)
+            .then((respuesta) => {
+              console.log(respuesta);
+            })
+            .catch((err) => console.log(err));
+        }
+      });
     }
   });
 });
