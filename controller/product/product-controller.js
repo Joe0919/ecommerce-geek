@@ -1,7 +1,7 @@
 import { productService } from "../../services/products-service.js";
 
-// MUESTRA LOS DATOS EN LA WEB
-const addNewLine = (name, price, imageURL, id) => {
+//!  MUESTRA LOS DATOS EN LA WEB
+const addNewLine = (name, price, category, imageURL, id) => {
   const linea = document.createElement("li");
   linea.classList.add("category__list-item");
   const contenido = `                    
@@ -9,10 +9,14 @@ const addNewLine = (name, price, imageURL, id) => {
     <div class="div-img">
         <img class="list__img" src="${imageURL}" alt="Foto de Producto">
     </div>
-    <h3 class="list__title titulo3">${name}</h3>
-    <p class="list__price">$ ${price}</p>
-    <a class="link list__boton link" href="#">Ver Producto</a>
+    <div class="div-caract">
+      <p class="list__category"> ${category}</p>
+      <h3 class="list__title titulo3">${name}</h3>
+      <p class="list__price">$ ${price}</p>
+      <a class="link list__boton link" href="#">Ver Producto</a>
+    </div>
     <div class="list__icons">
+    <i class="fa-solid fa-eye btn-ver" id="${id}" title="Ver Producto"></i>
     <i class="fa-solid fa-pen btn-editar" title="Editar"></i>
     <i class="fa-solid fa-trash btn-delete" id="${id}" title="Eliminar"></i>
     </div>
@@ -26,7 +30,7 @@ const addNewLine = (name, price, imageURL, id) => {
   return linea;
 };
 
-// AGREGA LA LINEA DE CODIGO AL ELEMENTO PADRE
+//!  AGREGA LA LINEA DE CODIGO AL ELEMENTO PADRE
 const list = document.querySelector("[data-product]");
 
 productService
@@ -36,6 +40,7 @@ productService
       const newLine = addNewLine(
         product.name,
         product.price,
+        product.category,
         product.imageURL,
         product.id
       );
@@ -44,7 +49,7 @@ productService
   })
   .catch((error) => alert("Ocurrió un error"));
 
-// CREACIÓN E INSERCIÓN DE NUEVOS DATOS EN EL DB.JSON
+//! ============ < CREACIÓN E INSERCIÓN DE NUEVOS DATOS EN EL DB.JSON >
 const formulario = document.querySelector("[data-form-productC]"); //FORMULARIO DEL MODAL CREATE
 // buttonSubmit.disabled = true;
 
@@ -54,7 +59,7 @@ const modalE = document.querySelector(".main-modalE"); // MODAL
 formulario.addEventListener("submit", (event) => {
   event.preventDefault();
   const name = document.querySelector("[data-name]").value;
-  const price = document.querySelector("[data-price]").value;
+  const price = formatearPrice(document.querySelector("[data-price]").value);
   const category = document.querySelector("[data-category]").value;
   const description = document.querySelector("[data-description]").value;
 
@@ -95,7 +100,7 @@ formulario.addEventListener("submit", (event) => {
       // newimageURL = "../../assets/img/" + id + "." + extimage;
 
       productService
-        .crearProducto(name, price, category, description, newimageURL, id)
+        .crearProducto(name, price, description, newimageURL, category, id)
         .then(() => {
           window.location.href = "../../view/products/create-success.html";
         })
@@ -104,13 +109,13 @@ formulario.addEventListener("submit", (event) => {
   });
 });
 
-// OBTENER Y MOSTRAR DATOS A ACTUALIZAR
+//! ========== OBTENER Y MOSTRAR DATOS A ACTUALIZAR ============
 const obtenerInformacion = async (id) => {
   formularioE.reset();
 
   // const id = document.querySelector(".id-product").value;
   if (id === null) {
-    MostrarMensaje("Error", "Algo salió mal al cargar los datos", "error");
+    productService.MostrarMensaje("Error", "Algo salió mal al cargar los datos", "error");
   }
 
   const name = document.querySelector("[data-nameE]");
@@ -137,31 +142,43 @@ const obtenerInformacion = async (id) => {
       throw new Error();
     }
   } catch (error) {
-    MostrarMensaje("Error", "Algo salió mal al actualizar los datos", "error");
+    productService.MostrarMensaje("Error", "Algo salió mal al actualizar los datos", "error");
   }
 };
 
-// FUNCION PARA MOSTRAR EL SWEET ALERT
-function MostrarMensaje(titulo, mensaje, tipo) {
-  Swal.fire(titulo, mensaje, tipo);
-}
 
+// ! FUncion que formatea el precio ingresado
+const formatearPrice = (price) => {
+  let newprice = "";
+  let array = price.split(".");
+
+  if(array.length == 2){
+    let decimal = array[1]+"";
+    if (decimal.length == 1) {
+      newprice = price + "0";
+    } else{
+      newprice = price + "00";
+    }
+  }else{
+      newprice = price + ".00";
+  }
+
+  return newprice;
+};
+
+
+
+//! ============ ACCION PARA LA EDICION DE LOS DATOS =================
 const formularioE = document.querySelector("[data-form-productE]"); //FORMULARIO DEL MODAL EDICION
 
 formularioE.addEventListener("submit", (evento) => {
   evento.preventDefault();
   const id = document.querySelector("[data-idE]").value;
   const name = document.querySelector("[data-nameE]").value;
-  const price = document.querySelector("[data-priceE]").value;
+  const price = formatearPrice(document.querySelector("[data-priceE]").value);
   const category = document.querySelector("[data-categoryE]").value;
   const description = document.querySelector("[data-descriptionE]").value;
   const imageURL = document.querySelector("[data-imageE]").value;
-
-  console.log(name);
-  console.log(price);
-  console.log(category);
-  console.log(description);
-  console.log(id);
 
   Swal.fire({
     title: "¿Estás seguro?",
@@ -184,9 +201,10 @@ formularioE.addEventListener("submit", (evento) => {
   });
 });
 
-// ACCIONES QUE SE REALIZAN CUANDO SE CARGA TODO EL DOM
+//! ========== ACCIONES QUE SE REALIZAN CUANDO SE CARGA TODO EL DOM
 window.addEventListener("load", () => {
-  // REALIZAMOS UNA DELEGACIÓN DE EVENTOS PARA LOS BOTONES DE EDICIÓN Y BORRADO DE PRODUCTOS
+
+  //! ========== REALIZAMOS UNA DELEGACIÓN DE EVENTOS PARA LOS BOTONES DE EDICIÓN Y BORRADO DE PRODUCTOS
   list.addEventListener("click", (e) => {
     if (
       // si el icono es Editar
@@ -202,7 +220,6 @@ window.addEventListener("load", () => {
       e.target.tagName === "I" &&
       e.target.classList[2] === "btn-delete"
     ) {
-      console.log(e.target.id);
       Swal.fire({
         title: "¿Estás seguro?",
         text: "Eliminar los datos del producto",
@@ -219,6 +236,7 @@ window.addEventListener("load", () => {
             .eliminarProducto(id)
             .then((respuesta) => {
               console.log(respuesta);
+              window.location.reload();
             })
             .catch((err) => console.log(err));
         }

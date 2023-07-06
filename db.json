@@ -1,10 +1,10 @@
 {
   "profile": [
     {
-      "id": 1,
       "name": "Admin",
       "email": "admin@alurageek.com",
-      "password": "Admin"
+      "password": "Admin",
+      "id": 1
     }
   ],
   "products": [
@@ -55,6 +55,14 @@
       "description": "lorem",
       "imageURL": "../../assets/img/console6.png",
       "id": 6
+    },
+    {
+      "name": "Producto 45",
+      "price": "55",
+      "category": "Diversos",
+      "description": "Producto que se usa para tales fines",
+      "imageURL": "../../assets/img/console6.png",
+      "id": "a77d9e63-ca38-48bd-910e-970cace7059a"
     }
   ]
 }
