@@ -193,12 +193,24 @@ body {
 }
 
 .btn-primary {
-  background-color: var(--color-btn-primary);
+  background-color: var(--primary);
   color: var(--color-text-w);
 }
 .btn-secundary {
-  background-color: var(--color-btn-secundary);
+  background-color: var(--secundary);
   color: var(--color-text-w);
+}
+.btn-danger {
+  background-color: var(--danger);
+  color: var(--color-text-w);
+}
+.btn-info {
+  background-color: var(--info);
+  color: var(--color-text-w);
+}
+.btn-warning {
+  background-color: var(--warning);
+  color: var(--color-text-b);
 }
 
 /* CCS para la seccion de productos */
@@ -232,10 +244,10 @@ body {
   font-size: 1.3rem;
   margin: 0;
   transition: all 0.3s;
-  
+
   padding: 10px 15px;
   border-radius: 5px;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 /* .list__icons i:hover {
   animation: animar .7s 1;
@@ -258,7 +270,7 @@ body {
   color: var(--secundary);
   border: 2px solid var(--secundary);
 }
-.list__icons .btn-ver:hover{
+.list__icons .btn-ver:hover {
   color: white;
   background-color: var(--secundary);
   filter: brightness(95%);
@@ -267,7 +279,7 @@ body {
   color: var(--primary);
   border: 2px solid var(--primary);
 }
-.list__icons .btn-editar:hover{
+.list__icons .btn-editar:hover {
   color: white;
   background-color: var(--primary);
   filter: brightness(95%);
@@ -276,13 +288,11 @@ body {
   color: var(--danger);
   border: 2px solid var(--danger);
 }
-.list__icons .btn-delete:hover{
+.list__icons .btn-delete:hover {
   color: white;
   background-color: var(--danger);
   filter: brightness(95%);
 }
-
-
 
 .products__category-header {
   display: flex;

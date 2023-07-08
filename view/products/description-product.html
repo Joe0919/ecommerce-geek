@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descripción - AluraGeek</title>
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/components/toggle.css">
+    <link rel="stylesheet" href="../../assets/css/components/carousel.css">
+    <link rel="shortcut icon" href="../../assets/img/logo2.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../assets/css/components/description.css">
+    <script src="https://kit.fontawesome.com/6b07c2fbaa.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="header container1">
+        <nav class="header__nav">
+            <div class="header__nav-list">
+                <div class="nav-list-item">
+                    <a class="nav-list-link" href="../../">
+                        <i class="fa-solid fa-gamepad"></i>
+                        <h1 class="alura">Alura<span class="geek">Geek</span></h1>
+                    </a>
+                    <div class="search-wrapper">
+                        <input class="search-input" type="text" placeholder="¿Qué deseas Buscar?">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            class="feather feather-search" viewBox="0 0 24 24">
+                            <defs></defs>
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="M21 21l-4.35-4.35"></path>
+                        </svg>
+                    </div>
+                </div>
+                <div class="nav-list-item-right">
+                    <div>
+                        <a href="../../view/login/" class="boton btn-secundary" title="Login">
+                            <i class="fa-solid fa-user"></i>
+                            <span>Login</span>
+                        </a>
+                    </div>
+                    <div title="Cambiar Tema">
+                        <label class="label" id="theme-switch">
+                            <span class="toggle" id="toggle">
+                                <input class="toggle-input" type="checkbox" id="checkbox_theme" />
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                    viewBox="0 0 32 32" id="moon" class="icon">
+                                    <title>moon-fill</title>
+                                    <path
+                                        d="M24.633 22.184c-8.188 0-14.82-6.637-14.82-14.82 0-2.695 0.773-5.188 2.031-7.363-6.824 1.968-11.844 8.187-11.844 15.644 0 9.031 7.32 16.355 16.352 16.355 7.457 0 13.68-5.023 15.648-11.844-2.18 1.254-4.672 2.028-7.367 2.028z">
+                                    </path>
+                                </svg>
+
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                    viewBox="0 0 32 32" id="sun" class="icon">
+                                    <title>sun-fill</title>
+                                    <path
+                                        d="M16.001 8c-4.418 0-8 3.582-8 8s3.582 8 8 8c4.418 0 7.999-3.582 7.999-8s-3.581-8-7.999-8v0zM14 2c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM4 6c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM2 14c1.105 0 2 0.895 2 2 0 1.107-0.895 2-2 2s-2-0.893-2-2c0-1.105 0.895-2 2-2zM4 26c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM14 30c0-1.109 0.895-2 2-2 1.108 0 2 0.891 2 2 0 1.102-0.892 2-2 2-1.105 0-2-0.898-2-2zM24 26c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM30 18c-1.104 0-2-0.896-2-2 0-1.107 0.896-2 2-2s2 0.893 2 2c0 1.104-0.896 2-2 2zM24 6c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2z">
+                                    </path>
+                                </svg>
+
+                                <span class="toggle__btn" id="toggle__btn" />
+                            </span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="container description" data-detail>
+            <!-- Aqui va el DIV de los detalles del producto -->
+        </section>
+        <section class="container">
+            <div class="productos_title">
+                <h2 class="title_similar">Productos similares</h2>
+            </div>
+            <ul class="products__category-list list-wrap" data-product>
+
+
+                <!--
+                <div class="contenedor block_principal">
+                    <img class="img_class" src="./img/unsplash_0POwK6iAiRQ.png" alt="">
+                    <div>
+                        <ul>
+                            <li class="nombre_producto">Producto XYZ</li>
+                            <li class="precio_producto">$ 60,00</li>
+                            <li><a class="link_producto" href="#">Ver producto</a></li>
+                        </ul>  
+                    </div>
+                </div>
+                <div class="contenedor block_principal">
+                    <img class="img_class" src="./img/unsplash_caNzzoxls8Q.png" alt="">
+                    <div>
+                        <ul>
+                            <li class="nombre_producto">Producto XYZ</li>
+                            <li class="precio_producto">$ 60,00</li>
+                            <li><a class="link_producto" href="#">Ver producto</a></li>
+                        </ul>   
+                    </div>
+                </div>
+                <div class="contenedor block_principal">
+                    <img class="img_class" src="./img/unsplash_ZV7lnfyQLmA.png" alt="">
+                    <div>
+                        <ul>
+                            <li class="nombre_producto">Producto XYZ</li>
+                            <li class="precio_producto">$ 60,00</li>
+                            <li><a class="link_producto" href="#">Ver producto</a></li>
+                        </ul>   
+                    </div>
+                </div>
+                <div class="contenedor block_principal">
+                    <img class="img_class" src="./img/unsplash_wa5z9o9fgjw.png" alt="">
+                    <div>
+                        <ul>
+                            <li class="nombre_producto">Producto XYZ</li>
+                            <li class="precio_producto">$ 60,00</li>
+                            <li><a class="link_producto" href="#">Ver producto</a></li>
+                        </ul>   
+                    </div>
+                </div>
+                <div class="contenedor block_2">
+                    <img class="img_class" src="./img/unsplash_Zjn4dT993-g.png" alt="">
+                    <div>
+                        <ul>
+                            <li class="nombre_producto">Producto XYZ</li>
+                            <li class="precio_producto">$ 60,00</li>
+                            <li><a class="link_producto" href="#">Ver producto</a></li>
+                        </ul>   
+                    </div>
+                </div>
+                <div class="contenedor block_1">
+                    <img class="img_class" src="./img/unsplash_k-xYhI3-gJM.png" alt="">
+                    <div>
+                        <ul>
+                            <li class="nombre_producto">Producto XYZ</li>
+                            <li class="precio_producto">$ 60,00</li>
+                            <li><a class="link_producto" href="#">Ver producto</a></li>
+                        </ul>  
+                    </div>
+                </div>
+-->
+            </ul>
+        </section>
+        <section class="contacto container bg-blue-sky" id="contacto">
+            <div class="contacto__logo">
+                <i class="fa-solid fa-gamepad logo"></i>
+                <h1 class="alura">Alura<span class="geek">Geek</span></h1>
+            </div>
+            <ul class="contacto__list">
+                <li class="contacto__list-item">
+                    <a class="contacto__list-link">¿Quienes Somos?</a>
+                </li>
+                <li class="contacto__list-item">
+                    <a class="contacto__list-link">Politica de Privacidad</a>
+                </li>
+                <li class="contacto__list-item">
+                    <a class="contacto__list-link">Programa de Fidelidad</a>
+                </li>
+                <li class="contacto__list-item">
+                    <a class="contacto__list-link">Nuestras Tiendas</a>
+                </li>
+                <li class="contacto__list-item">
+                    <a class="contacto__list-link">¿Quiero ser Franquisiado?</a>
+                </li>
+                <li class="contacto__list-item">
+                    <a class="contacto__list-link">Anuncie Aqui</a>
+                </li>
+            </ul>
+            <form class="contacto__form" action="https://formsubmit.co/joel09llalli@gmail.com" name="contacto__form"
+                method="post">
+                <h2 class="contacto__title titulo2">Hable con Nosotros</h2>
+
+                <div class="group">
+                    <input class="contacto__form-input" name="name" id="name" type="text" required autocomplete="off">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label class="contacto__form-label">Nombre Completo (*)</label>
+                </div>
+                <div class="group">
+                    <textarea class="contacto__form-input" required cols="40" rows="5" name="mensaje" id="mensaje"
+                        minlength="10" autocomplete="off"></textarea>
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label class="contacto__form-label">Mensaje (*)</label>
+                </div>
+                <div class="group">
+                    <button class="boton btn-primary" id="boton-form" type="submit"
+                        title="Enviar Mensaje y recargar">Enviar
+                        Mensaje</a>
+                </div>
+                <input type="hidden" name="_next" value="https://joe0919.github.io/portafolio_joel-llalli/">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+            </form>
+        </section>
+    </main>
+    <section class="copyright-area">
+        <div class="container1">
+            <div class="copyright-text">
+                <p>Copyright &copy; Desarrollado por <strong>Joel Llallihuaman Giraldo</strong>
+                    <br><b>2023</b>
+                </p>
+            </div>
+        </div>
+    </section>
+    <script src="../../assets/js/carousel.js"></script>
+    <script type="module" src="../../controller/product/detail-product.js"></script>
+</body>
+
+</html>

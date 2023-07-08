@@ -13,10 +13,12 @@ const addNewLine = (name, price, category, imageURL, id) => {
       <p class="list__category"> ${category}</p>
       <h3 class="list__title titulo3">${name}</h3>
       <p class="list__price">$ ${price}</p>
-      <a class="link list__boton link" href="#">Ver Producto</a>
+      
     </div>
     <div class="list__icons">
-    <i class="fa-solid fa-eye btn-ver" id="${id}" title="Ver Producto"></i>
+    <a href="../../view/products/description-product.html?id=${id}&category=${category}">
+      <i class="fa-solid fa-eye btn-ver"></i>
+    </a>
     <i class="fa-solid fa-pen btn-editar" title="Editar"></i>
     <i class="fa-solid fa-trash btn-delete" id="${id}" title="Eliminar"></i>
     </div>
@@ -115,7 +117,11 @@ const obtenerInformacion = async (id) => {
 
   // const id = document.querySelector(".id-product").value;
   if (id === null) {
-    productService.MostrarMensaje("Error", "Algo salió mal al cargar los datos", "error");
+    productService.MostrarMensaje(
+      "Error",
+      "Algo salió mal al cargar los datos",
+      "error"
+    );
   }
 
   const name = document.querySelector("[data-nameE]");
@@ -142,31 +148,32 @@ const obtenerInformacion = async (id) => {
       throw new Error();
     }
   } catch (error) {
-    productService.MostrarMensaje("Error", "Algo salió mal al actualizar los datos", "error");
+    productService.MostrarMensaje(
+      "Error",
+      "Algo salió mal al actualizar los datos",
+      "error"
+    );
   }
 };
-
 
 // ! FUncion que formatea el precio ingresado
 const formatearPrice = (price) => {
   let newprice = "";
   let array = price.split(".");
 
-  if(array.length == 2){
-    let decimal = array[1]+"";
+  if (array.length == 2) {
+    let decimal = array[1] + "";
     if (decimal.length == 1) {
       newprice = price + "0";
-    } else{
+    } else {
       newprice = price + "00";
     }
-  }else{
-      newprice = price + ".00";
+  } else {
+    newprice = price + ".00";
   }
 
   return newprice;
 };
-
-
 
 //! ============ ACCION PARA LA EDICION DE LOS DATOS =================
 const formularioE = document.querySelector("[data-form-productE]"); //FORMULARIO DEL MODAL EDICION
@@ -203,7 +210,6 @@ formularioE.addEventListener("submit", (evento) => {
 
 //! ========== ACCIONES QUE SE REALIZAN CUANDO SE CARGA TODO EL DOM
 window.addEventListener("load", () => {
-
   //! ========== REALIZAMOS UNA DELEGACIÓN DE EVENTOS PARA LOS BOTONES DE EDICIÓN Y BORRADO DE PRODUCTOS
   list.addEventListener("click", (e) => {
     if (
@@ -241,6 +247,6 @@ window.addEventListener("load", () => {
             .catch((err) => console.log(err));
         }
       });
-    }
+    } 
   });
 });
