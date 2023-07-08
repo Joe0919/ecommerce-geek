@@ -42,13 +42,16 @@
     font-size: 1.2rem;
     font-weight: 700;
     color: var(--font-color2);
-    margin: 16px 0
+    margin: 14px 0 16px;
   }
   .profile-details .job {
     font-size: 1rem;
     font-weight: 500;
-    color: #4d4d4d;
+    color: var(--font-color1);
     margin: 10px 0;
+  }
+  .profile-details .job:first-child{
+    font-style: italic;
   }
   
   .swiper-navBtn {

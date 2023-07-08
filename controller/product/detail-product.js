@@ -85,8 +85,7 @@ const crearSimilares = (name, price, category, imageURL, id) => {
   linea2.classList.add("card");
   linea2.classList.add("swiper-slide");
   const contenido = `                    
-    
-      <a href="#" class="link-product">
+      <a href="../../view/products/description-product.html?id=${id}&category=${category}" class="link-product">
           <div class="image-box">
               <img src="${imageURL}" alt="Foto de producto" />
           </div>
@@ -99,7 +98,6 @@ const crearSimilares = (name, price, category, imageURL, id) => {
               </div>
           </div>
       </a>
-    
           `;
 
   linea2.innerHTML = contenido;
