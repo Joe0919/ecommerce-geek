@@ -215,7 +215,7 @@ body {
 
 /* CCS para la seccion de productos */
 .container {
-  padding: 4rem 6rem;
+  padding: 3rem 6rem;
 }
 .container1 {
   padding: 0 6rem;
@@ -307,6 +307,12 @@ body {
   width: 100%;
   column-gap: 0.8%;
 }
+
+.link-product{
+  text-decoration: none;
+  color: black;
+}
+
 .div-img {
   overflow: hidden;
   width: auto;
@@ -542,7 +548,7 @@ body {
 @media (min-width: 768px) {
   .container {
     max-width: 100%;
-    padding: 3rem 3rem;
+    padding: 2rem 3rem;
   }
 
   .container1 {

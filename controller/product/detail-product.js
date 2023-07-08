@@ -1,7 +1,7 @@
 import { productService } from "../../services/products-service.js";
 
 const url = new URL(window.location);
-const id = url.searchParams.get("id");
+const idp = url.searchParams.get("id");
 const cate = url.searchParams.get("category");
 
 //backticks
@@ -67,7 +67,7 @@ const crearLineaDescripcion = (
 const section_detail = document.querySelector("[data-detail]");
 
 productService
-  .detalleProducto(id)
+  .detalleProducto(idp)
   .then((data) => {
     const newLine = crearLineaDescripcion(
       data.name,
@@ -81,27 +81,25 @@ productService
   .catch((error) => alert(error));
 
 const crearSimilares = (name, price, category, imageURL, id) => {
-  const linea2 = document.createElement("li");
-  linea2.classList.add("category__list-item");
+  const linea2 = document.createElement("div");
+  linea2.classList.add("card");
+  linea2.classList.add("swiper-slide");
   const contenido = `                    
     
-        <div class="div-img">
-            <img class="list__img" src="${imageURL}" alt="Foto de Producto">
-        </div>
-        <div class="div-caract">
-          <p class="list__category"> ${category}</p>
-          <h3 class="list__title titulo3">${name}</h3>
-          <p class="list__price">$ ${price}</p>
-          
-        </div>
-        <div class="list__icons">
-        <a href="../../view/products/description-product.html?id=${id}&category=${category}">
-          <i class="fa-solid fa-eye btn-ver"></i>
-        </a>
-        <i class="fa-solid fa-pen btn-editar" title="Editar"></i>
-        <i class="fa-solid fa-trash btn-delete" id="${id}" title="Eliminar"></i>
-        </div>
-        <input class="id-product" name="id-product" type="hidden" value="${id}">
+      <a href="#" class="link-product">
+          <div class="image-box">
+              <img src="${imageURL}" alt="Foto de producto" />
+          </div>
+          <div class="profile-details">
+              <div class="name-job">
+                  <h4 class="job">${category}</h4>
+                  <h3 class="name">${name}</h3>
+                  <h4 class="job">$. ${price}</h4>
+                  <p class="link">Ver Producto <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+              </div>
+          </div>
+      </a>
+    
           `;
 
   linea2.innerHTML = contenido;
@@ -111,20 +109,18 @@ const crearSimilares = (name, price, category, imageURL, id) => {
   return linea2;
 };
 
-const section_similares = document.querySelector("[data-product]");
+const section_similares = document.querySelector("[data-similares]");
 
 productService
   .listProducts()
   .then((data) => {
-    data.forEach((product) => {
-      const newLine = crearSimilares(
-        product.name,
-        product.price,
-        product.category,
-        product.imageURL,
-        product.id
-      );
-      section_similares.appendChild(newLine);
+    data.forEach(({ name, price, category, imageURL, id }) => {
+      if (cate == category) {
+        if (id != idp) {
+          const newLine = crearSimilares(name, price, category, imageURL, id);
+          section_similares.appendChild(newLine);
+        }
+      }
     });
   })
   .catch((error) => console.log(error));

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Descripción - AluraGeek</title>
+    <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css" />
     <link rel="stylesheet" href="../../assets/css/normalize.css">
     <link rel="stylesheet" href="../../assets/css/style.css">
     <link rel="stylesheet" href="../../assets/css/components/toggle.css">
@@ -75,74 +76,22 @@
         </section>
         <section class="container">
             <div class="productos_title">
-                <h2 class="title_similar">Productos similares</h2>
+                <h2 class="title_similar">Tambien te puede interesar:</h2>
             </div>
-            <ul class="products__category-list list-wrap" data-product>
+            <div class="containers swiper">
+                <div class="slide-container" >
+                    <div class="card-wrapper swiper-wrapper" data-similares>
+                        
+                        
+                        
+                        
 
-
-                <!--
-                <div class="contenedor block_principal">
-                    <img class="img_class" src="./img/unsplash_0POwK6iAiRQ.png" alt="">
-                    <div>
-                        <ul>
-                            <li class="nombre_producto">Producto XYZ</li>
-                            <li class="precio_producto">$ 60,00</li>
-                            <li><a class="link_producto" href="#">Ver producto</a></li>
-                        </ul>  
                     </div>
                 </div>
-                <div class="contenedor block_principal">
-                    <img class="img_class" src="./img/unsplash_caNzzoxls8Q.png" alt="">
-                    <div>
-                        <ul>
-                            <li class="nombre_producto">Producto XYZ</li>
-                            <li class="precio_producto">$ 60,00</li>
-                            <li><a class="link_producto" href="#">Ver producto</a></li>
-                        </ul>   
-                    </div>
-                </div>
-                <div class="contenedor block_principal">
-                    <img class="img_class" src="./img/unsplash_ZV7lnfyQLmA.png" alt="">
-                    <div>
-                        <ul>
-                            <li class="nombre_producto">Producto XYZ</li>
-                            <li class="precio_producto">$ 60,00</li>
-                            <li><a class="link_producto" href="#">Ver producto</a></li>
-                        </ul>   
-                    </div>
-                </div>
-                <div class="contenedor block_principal">
-                    <img class="img_class" src="./img/unsplash_wa5z9o9fgjw.png" alt="">
-                    <div>
-                        <ul>
-                            <li class="nombre_producto">Producto XYZ</li>
-                            <li class="precio_producto">$ 60,00</li>
-                            <li><a class="link_producto" href="#">Ver producto</a></li>
-                        </ul>   
-                    </div>
-                </div>
-                <div class="contenedor block_2">
-                    <img class="img_class" src="./img/unsplash_Zjn4dT993-g.png" alt="">
-                    <div>
-                        <ul>
-                            <li class="nombre_producto">Producto XYZ</li>
-                            <li class="precio_producto">$ 60,00</li>
-                            <li><a class="link_producto" href="#">Ver producto</a></li>
-                        </ul>   
-                    </div>
-                </div>
-                <div class="contenedor block_1">
-                    <img class="img_class" src="./img/unsplash_k-xYhI3-gJM.png" alt="">
-                    <div>
-                        <ul>
-                            <li class="nombre_producto">Producto XYZ</li>
-                            <li class="precio_producto">$ 60,00</li>
-                            <li><a class="link_producto" href="#">Ver producto</a></li>
-                        </ul>  
-                    </div>
-                </div>
--->
-            </ul>
+                <div class="swiper-button-next swiper-navBtn"></div>
+                <div class="swiper-button-prev swiper-navBtn"></div>
+                <div class="swiper-pagination"></div>
+            </div>
         </section>
         <section class="contacto container bg-blue-sky" id="contacto">
             <div class="contacto__logo">
@@ -206,6 +155,7 @@
             </div>
         </div>
     </section>
+    <script src="../../assets/js/swiper-bundle.min.js"></script>
     <script src="../../assets/js/carousel.js"></script>
     <script type="module" src="../../controller/product/detail-product.js"></script>
 </body>
