@@ -1,5 +1,6 @@
 import { productService } from "../../services/products-service.js";
 
+
 //!  MUESTRA LOS DATOS EN LA WEB
 const addNewLine = (name, price, category, imageURL, id) => {
   const linea = document.createElement("li");

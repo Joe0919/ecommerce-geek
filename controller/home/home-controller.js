@@ -5,7 +5,7 @@ const crearNuevaLinea = (name, price, category, imageURL, id) => {
   linea.classList.add("card");
   linea.classList.add("swiper-slide");
   const contenido = `                    
-        <a href="./../../view/products/description-product.html?id=${id}&category=${category}"
+        <a href="view/products/description-product.html?id=${id}&category=${category}"
             class="link-product">
             <div class="image-content">
 
