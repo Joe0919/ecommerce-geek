@@ -15,7 +15,7 @@
   background-color: #fff;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
     rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
-    /* height: 340px; */
+  /* height: 340px; */
 }
 
 .image-content,
@@ -40,7 +40,7 @@
   object-fit: cover;
   width: 100%;
   height: 202px;
-  border-radius: 25px 25px 0 0 ;
+  border-radius: 25px 25px 0 0;
 }
 
 .overlay {
@@ -96,12 +96,15 @@
   margin: 14px 0px;
 }
 .description {
-  font-size: .95em;
+  font-size: 0.95em;
   color: #707070;
 }
 .swiper-navBtn {
-  color: #6e93f7;
+  /* color: #6e93f7; */
   transition: color 0.3s ease;
+  top: 0;
+  height: 100%;
+  width: 40px;
 }
 .swiper-navBtn:hover {
   color: #4070f4;
@@ -111,9 +114,21 @@
   font-size: 35px;
 }
 .swiper-button-next {
+  background: linear-gradient(
+    to left,
+    rgba(127, 140, 141, 1) 0%,
+    rgba(204, 209, 209, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
   right: 0;
 }
 .swiper-button-prev {
+  background: linear-gradient(
+    to right,
+    rgba(127, 140, 141, 1) 0%,
+    rgba(204, 209, 209, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
   left: 0;
 }
 .swiper-pagination-bullet {
@@ -125,10 +140,4 @@
 }
 
 @media screen and (max-width: 768px) {
-  .slide-content {
-    margin: 0 10px;
-  }
-  .swiper-navBtn {
-    display: none;
-  }
 }

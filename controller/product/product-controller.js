@@ -15,7 +15,7 @@ const addNewLine = (name, price, category, imageURL, id) => {
       <p class="list__price">$ ${price}</p>
       
     </div>
-    <div class="list__icons">
+    <div class="list__icons prod">
     <a href="../../view/products/description-product.html?id=${id}&category=${category}">
       <i class="fa-solid fa-eye btn-ver"></i>
     </a>

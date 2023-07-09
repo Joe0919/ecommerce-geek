@@ -16,7 +16,11 @@ const crearLineaDescripcion = (
 
   const contenido = `
             <div class="description__header">
-                <p>Home > ${category} </p>
+                <p class="enlace-desc">
+                  <a href="../../index.html">Home</a> > 
+                  <a href="../products/all-products.html">Productos</a> > 
+                  ${category}
+                </p>
             </div>
             <div class="description__product">
                 <img class="description__product-photo" src="${imageURL}" alt="Foto de Producto ">
