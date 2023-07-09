@@ -2,24 +2,28 @@ import { productService } from "../../services/products-service.js";
 
 //!  MUESTRA LOS DATOS EN LA WEB
 const addNewLine = (name, price, category, imageURL, id) => {
-  const linea = document.createElement("div");
-  linea.classList.add("card");
-  linea.classList.add("swiper-slide");
+  const linea = document.createElement("li");
+  linea.classList.add("category__list-item");
   const contenido = `                    
-      <a href="../../view/products/description-product.html?id=${id}&category=${category}" class="link-product">
-          <div class="image-box">
-              <img src="${imageURL}" alt="Foto de producto" />
-          </div>
-          <div class="profile-details">
-              <div class="name-job">
-                  <h4 class="job">${category}</h4>
-                  <h3 class="name">${name}</h3>
-                  <h4 class="job">$. ${price}</h4>
-                  <p class="link">Ver Producto <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
-              </div>
-          </div>
-      </a>
-          `;
+
+    <div class="div-img">
+        <img class="list__img" src="${imageURL}" alt="Foto de Producto">
+    </div>
+    <div class="div-caract">
+      <p class="list__category"> ${category}</p>
+      <h3 class="list__title titulo3">${name}</h3>
+      <p class="list__price">$ ${price}</p>
+      
+    </div>
+    <div class="list__icons">
+    <a href="../../view/products/description-product.html?id=${id}&category=${category}">
+      <i class="fa-solid fa-eye btn-ver"></i>
+    </a>
+    <i class="fa-solid fa-pen btn-editar" title="Editar"></i>
+    <i class="fa-solid fa-trash btn-delete" id="${id}" title="Eliminar"></i>
+    </div>
+    <input class="id-product" name="id-product" type="hidden" value="${id}">
+      `;
 
   linea.innerHTML = contenido;
 
@@ -28,8 +32,8 @@ const addNewLine = (name, price, category, imageURL, id) => {
   return linea;
 };
 
-//!  Inicializamos
-const list = document.querySelector("[data-product-1]");
+//!  AGREGA LA LINEA DE CODIGO AL ELEMENTO PADRE
+const list = document.querySelector("[data-product]");
 
 productService
   .listProducts()

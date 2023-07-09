@@ -25,10 +25,10 @@ const crearLineaDescripcion = (
                     <h1 class="info__name">${name} </h1>
                     <h2 class="info__price">
                         <span class="desct"></span>
-                        <b class="price-now">$. ${price} </b>
+                        <b class="price-now black">$. ${price} </b>
                         <span class="price-previous"></span>
                     </h2>
-                    <h3 class="info__title-desc">Descripcion del producto: </h3>
+                    <h3 class="info__title-desc black">Descripcion del producto: </h3>
                     <p class="info__desc">${description}</p>
                     <div class="info__butons">
                         <div class="size-config">
@@ -85,19 +85,21 @@ const crearSimilares = (name, price, category, imageURL, id) => {
   linea2.classList.add("card");
   linea2.classList.add("swiper-slide");
   const contenido = `                    
-      <a href="../../view/products/description-product.html?id=${id}&category=${category}" class="link-product">
-          <div class="image-box">
-              <img src="${imageURL}" alt="Foto de producto" />
+    <a href="../../view/products/description-product.html?id=${id}&category=${category}"
+      class="link-product">
+      <div class="image-content">
+
+          <img src="${imageURL}" alt="Foto de producto" />
+      </div>
+
+      <div class="card-content">
+          <div class="name-job">
+              <h3 class="name">${name}</h3>
+              <h4 class="job">$. ${price}</h4>
+              <p class="link">Ver Producto <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
           </div>
-          <div class="profile-details">
-              <div class="name-job">
-                  <h4 class="job">${category}</h4>
-                  <h3 class="name">${name}</h3>
-                  <h4 class="job">$. ${price}</h4>
-                  <p class="link">Ver Producto <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
-              </div>
-          </div>
-      </a>
+      </div>
+    </a>
           `;
 
   linea2.innerHTML = contenido;

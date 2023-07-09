@@ -1,23 +1,31 @@
 import { productService } from "../../services/products-service.js";
 //backticks
-const crearNuevaLinea = (imagen, categoria, nombre_prod, precio_prod, id) => {
+const crearNuevaLinea = (name, price, category, imageURL, id) => {
   const linea = document.createElement("div");
+  linea.classList.add("card");
+  linea.classList.add("swiper-slide");
+  const contenido = `                    
+        <a href="../../view/products/description-product.html?id=${id}&category=${category}"
+            class="link-product">
+            <div class="image-content">
 
-  const contenido = `
-  <div class="contenedor block_principal">
-    <a class="link_producto" href="./descripcion_productos.html?id=${id}&categoria=${categoria}">
-    <img src="${imagen}" alt="${nombre_prod}">
-    <div>
-      <ul>
-        <li class="nombre_producto">${nombre_prod}</li>
-        <li class="precio_producto">${precio_prod}</li>
-        <li>Ver producto</li>
-      </ul>   
-    </div>
-    </a>
- </div>
-  `;
+                <img src="${imageURL}" alt="Foto de producto" />
+            </div>
+
+            <div class="card-content">
+                <div class="name-job">
+                    <h3 class="name">${name}</h3>
+                    <h4 class="job">$. ${price}</h4>
+                    <p class="link">Ver Producto <i class="fa-solid fa-arrow-up-right-from-square"></i></p>
+                </div>
+            </div>
+        </a>
+          `;
+
   linea.innerHTML = contenido;
+
+  // Puedes colocar aca los eventos al cargar el DOM
+
   return linea;
 };
 
@@ -25,53 +33,32 @@ const starwars = "Star Wars";
 const consolas = "Consolas";
 const diversos = "Diversos";
 
-const div_sw = document.querySelector("[data-producto-sw]");
-const div_cl = document.querySelector("[data-producto-cl]");
-const div_dv = document.querySelector("[data-producto-dv]");
+const section_product1 = document.querySelector("[data-product-1]");
+const section_product2 = document.querySelector("[data-product-2]");
+const section_product3 = document.querySelector("[data-product-3]");
 
 let cont_sw = 0;
 let cont_cl = 0;
 let cont_dv = 0;
 
-listaServices
-  .listaProductos()
+productService
+  .listProducts()
   .then((data) => {
-    data.forEach(({ imagen, categoria, nombre_prod, precio_prod, id }) => {
-      if (screen.width > 768) {
-        if (categoria === starwars && cont_sw < 6) {
-          const nuevaLinea = crearNuevaLinea(imagen, categoria, nombre_prod, precio_prod, id);
-          div_sw.appendChild(nuevaLinea);
-          cont_sw++;
-        }
-        if (categoria === consolas && cont_cl < 6) {
-          const nuevaLinea = crearNuevaLinea(imagen, categoria, nombre_prod, precio_prod, id);
-          div_cl.appendChild(nuevaLinea);
-          cont_cl++;
-        }
-        if (categoria === diversos && cont_dv < 6) {
-          const nuevaLinea = crearNuevaLinea(imagen, categoria, nombre_prod, precio_prod, id);
-          div_dv.appendChild(nuevaLinea);
-          cont_dv++;
-        }
+    data.forEach(({ name, price, category, imageURL, id }) => {
+      //   if (screen.width > 768) {
+      if (category === starwars) {
+        const nuevaLinea = crearNuevaLinea(name, price, category, imageURL, id);
+        section_product1.appendChild(nuevaLinea);
       }
-      else if (screen.width <= 768) {
-        if (categoria === starwars && cont_sw < 4) {
-          const nuevaLinea = crearNuevaLinea(imagen, categoria, nombre_prod, precio_prod, id);
-          div_sw.appendChild(nuevaLinea);
-          cont_sw++;
-        }
-        if (categoria === consolas && cont_cl < 4) {
-          const nuevaLinea = crearNuevaLinea(imagen, categoria, nombre_prod, precio_prod, id);
-          div_cl.appendChild(nuevaLinea);
-          cont_cl++;
-        }
-        if (categoria === diversos && cont_dv < 4) {
-          const nuevaLinea = crearNuevaLinea(imagen, categoria, nombre_prod, precio_prod, id);
-          div_dv.appendChild(nuevaLinea);
-          cont_dv++;
-        }
+      if (category === consolas ) {
+        const nuevaLinea = crearNuevaLinea(name, price, category, imageURL, id);
+        section_product2.appendChild(nuevaLinea);
       }
-
-      });
+      if (category === diversos) {
+        const nuevaLinea = crearNuevaLinea(name, price, category, imageURL, id);
+        section_product3.appendChild(nuevaLinea);
+      }
+      //   }
+    });
   })
-  .catch((error) => alert("Oops! Error. Comuniquese con Matr3"));
+  .catch((error) => console.log(error));

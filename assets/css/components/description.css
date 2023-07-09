@@ -30,11 +30,16 @@
   font-size: 1.2rem;
   font-weight: 500;
 }
+
 .info__price .price-previous{
   color: gray;
   font-size: 1.2rem;
   font-weight: 500;
   text-decoration: line-through;
+}
+
+.black{
+  color: black;
 }
 
 .info__desc{
