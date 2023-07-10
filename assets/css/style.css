@@ -22,11 +22,12 @@ body {
   --font-color5: #2a7ae4;
 
   --bg-blue-sky: #eaf2fd;
+  --bg-gray: #F2F4F4 ;
+  --bg-gray1: #f5f5f5;
 
   --color-input: #fff;
   --color-bar: #5264ae;
 
-  --bg-gray: #f5f5f5;
 
   --success: #28a745;
   --secundary: #6c757d;
@@ -46,6 +47,9 @@ body {
 }
 .bg-gray {
   background-color: var(--bg-gray);
+}
+.bg-gray1 {
+  background-color: var(--bg-gray1);
 }
 .list-wrap {
   flex-wrap: wrap;

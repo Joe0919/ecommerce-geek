@@ -221,14 +221,16 @@
                         <p class="alura">Alura<span class="geek">Geek</span></p>
                     </a>
                     <div class="search-wrapper">
-                        <input class="search-input" type="text" placeholder="¿Qué deseas Buscar?">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            class="feather feather-search" viewBox="0 0 24 24">
-                            <defs></defs>
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="M21 21l-4.35-4.35"></path>
-                        </svg>
+                        <input class="search-input" id="search-input" type="text" placeholder="¿Qué deseas Buscar?" onkeypress="Enter(event)">
+                        <button class="btn-search" title="Buscar" id="btn-search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                class="feather feather-search" viewBox="0 0 24 24">
+                                <defs></defs>
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="M21 21l-4.35-4.35"></path>
+                            </svg>
+                        </button>
                     </div>
                 </div>
 
@@ -342,6 +344,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="../../assets/js/modal.js"></script>
     <script type="module" src="../../controller/product/product-controller.js"></script>
+    <script src="../../controller/product/search-controller.js"></script>
     <script>
         AOS.init();
     </script>

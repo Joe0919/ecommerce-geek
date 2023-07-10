@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultados de Busqueda - AluraGeek</title>
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="assets/css/components/toggle.css">
-    <link rel="shortcut icon" href="assets/img/logo2.png" type="image/x-icon">
+    <title>Resultados - AluraGeek</title>
+    <link rel="stylesheet" href="../../assets/css/normalize.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/components/toggle.css">
+    <link rel="stylesheet" href="../../assets/css/components/results.css">
+    <link rel="shortcut icon" href="../../assets/img/logo2.png" type="image/x-icon">
     <script src="https://kit.fontawesome.com/6b07c2fbaa.js" crossorigin="anonymous"></script>
 </head>
 
@@ -23,19 +23,21 @@
                         <h1 class="alura">Alura<span class="geek">Geek</span></h1>
                     </a>
                     <div class="search-wrapper">
-                        <input class="search-input" type="text" placeholder="¿Qué deseas Buscar?">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            class="feather feather-search" viewBox="0 0 24 24">
-                            <defs></defs>
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="M21 21l-4.35-4.35"></path>
-                        </svg>
+                        <input class="search-input" id="search-input" type="text" placeholder="¿Qué deseas Buscar?" onkeypress="Enter(event)">
+                        <button class="btn-search" title="Buscar" id="btn-search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                class="feather feather-search" viewBox="0 0 24 24">
+                                <defs></defs>
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="M21 21l-4.35-4.35"></path>
+                            </svg>
+                        </button>
                     </div>
                 </div>
                 <div class="nav-list-item-right">
                     <div>
-                        <a href="view/login/" class="boton btn-secundary" title="Login">
+                        <a href="../../view/login/" class="boton btn-secundary" title="Login">
                             <i class="fa-solid fa-user"></i>
                             <span>Login</span>
                         </a>
@@ -69,71 +71,16 @@
         </nav>
     </header>
     <main class="main">
-        <section class="banner container1">
-            <div>
-                <h1 class="banner__title titulo1">Febrero Promocional</h1>
-                <p class="banner__text parrafo">Productos selecionados con 33% de descuento</p>
-                <a href="" class="boton btn-primary">Ver Productos</a>
+
+        <section class="resultados container bg-gray1">
+            <div class="resultados__header">
+                <h2 class="titulo2 resultados__title">Productos Encontrados</h2>
+            </div>
+            <div class="resultados__body" data-products>
+
             </div>
         </section>
 
-        <section class="container">
-            <section class="products__category">
-                <div class="products__category-header">
-                    <h2 class="titulo2 category-title">Star Wars</h2>
-                    <a class="link products__category-link" href="view/products/all-products.html">Ver todos <i
-                            class="fa-solid fa-arrow-right"></i></a>
-                </div>
-
-                <div class="slide-container swiper">
-                    <div class="slide-content">
-                        <div class="card-wrapper swiper-wrapper" data-product-1>
-                           
-                        </div>
-                    </div>
-
-                    <div class="swiper-button-next swiper-navBtn"></div>
-                    <div class="swiper-button-prev swiper-navBtn"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </section>
-            <section class="products__category">
-                <div class="products__category-header">
-                    <h2 class="titulo2 category-title">Consolas</h2>
-                    <a class="link products__category-link" href="view/products/all-products.html">Ver todos <i
-                            class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <div class="slide-container swiper">
-                    <div class="slide-content">
-                        <div class="card-wrapper swiper-wrapper" data-product-2>
-                           
-                        </div>
-                    </div>
-
-                    <div class="swiper-button-next swiper-navBtn"></div>
-                    <div class="swiper-button-prev swiper-navBtn"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </section>
-            <section class="products__category">
-                <div class="products__category-header">
-                    <h2 class="titulo2 category-title">Diversos</h2>
-                    <a class="link products__category-link" href="view/products/all-products.html">Ver todos <i
-                            class="fa-solid fa-arrow-right"></i></a>
-                </div>
-                <div class="slide-container swiper">
-                    <div class="slide-content">
-                        <div class="card-wrapper swiper-wrapper" data-product-3>
-                           
-                        </div>
-                    </div>
-
-                    <div class="swiper-button-next swiper-navBtn"></div>
-                    <div class="swiper-button-prev swiper-navBtn"></div>
-                    <div class="swiper-pagination"></div>
-                </div>
-            </section>
-        </section>
         <section class="contacto container bg-blue-sky" id="contacto">
             <div class="contacto__logo">
                 <i class="fa-solid fa-gamepad logo"></i>
@@ -196,7 +143,8 @@
             </div>
         </div>
     </section>
-    <script type="module" src="controller/home/home-controller.js"></script>
+    <script src="../../controller/product/search-controller.js"></script>
+    <script type="module" src="../../controller/product/result-controller.js"></script>
 </body>
 
 </html>

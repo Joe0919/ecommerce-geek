@@ -24,14 +24,16 @@
                         <p class="alura">Alura<span class="geek">Geek</span></p>
                     </a>
                     <div class="search-wrapper">
-                        <input class="search-input" type="text" placeholder="¿Qué deseas Buscar?">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
-                            stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            class="feather feather-search" viewBox="0 0 24 24">
-                            <defs></defs>
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="M21 21l-4.35-4.35"></path>
-                        </svg>
+                        <input class="search-input" id="search-input" type="text" placeholder="¿Qué deseas Buscar?" onkeypress="Enter(event)">
+                        <button class="btn-search" title="Buscar" id="btn-search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
+                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                class="feather feather-search" viewBox="0 0 24 24">
+                                <defs></defs>
+                                <circle cx="11" cy="11" r="8"></circle>
+                                <path d="M21 21l-4.35-4.35"></path>
+                            </svg>
+                        </button>
                     </div>
                 </div>
 
@@ -89,6 +91,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
         integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="../../controller/product/search-controller.js"></script>
 
 </body>
 
