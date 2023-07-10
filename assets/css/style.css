@@ -65,7 +65,8 @@ body {
   height: 80px;
   display: flex;
   align-items: center;
-  /* background-color: #1f1c24; */
+
+  background-color: #D7BDE2;
 }
 .header__nav {
   padding: 0;
@@ -588,17 +589,7 @@ body {
   font-size: 1.2rem;
 }
 
-@media (min-width: 768px) {
-  .container {
-    max-width: 100%;
-    padding: 2rem 3rem;
-  }
-
-  .container1 {
-    padding: 0rem 3rem;
-  }
-}
-
+/* CSS PARA EL MODAL DE INSERCIÓN */
 .agregar__imagen-div {
   background-image: url("../img/no-img-photo.jpg");
   background-size: cover;
@@ -627,3 +618,52 @@ body {
   text-overflow: ellipsis;
   box-sizing: border-box;
 }
+
+
+/* **************** CSS PARA DISTINTOS DISPOSITIVOS *******************  */
+
+/* Escritorio extra grande */
+/* @media only screen and (min-width: 1200px){
+
+} */
+/* Escritorio grande */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .header{
+    background-color: #AEB6BF;
+  }
+}
+/* Escritorio pequeño / tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .header{
+    background-color: #DC7633;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 2rem 3rem;
+  }
+
+  .container1 {
+    padding: 0rem 3rem;
+  }
+ 
+}
+/* Tablets y phablets */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .header{
+    background-color: #F9E79F;
+  }
+}
+/* Teléfonos */
+@media only screen and (max-width: 575px) {
+  .header{
+    background-color: #ABEBC6;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .header{
+    background-color: #85C1E9;
+  }
+}
+
+
