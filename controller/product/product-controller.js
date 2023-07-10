@@ -1,6 +1,5 @@
 import { productService } from "../../services/products-service.js";
 
-
 //!  MUESTRA LOS DATOS EN LA WEB
 const addNewLine = (name, price, category, imageURL, id) => {
   const linea = document.createElement("li");
@@ -52,6 +51,39 @@ productService
   })
   .catch((error) => alert("Ocurrió un error"));
 
+// + CONTROLADOR DE CREACIÓN
+
+const inputFileImage = document.querySelector("#input__imagen");
+// const inputFileImageE = document.querySelector("#input__imagenE");
+const labelFileImage = document.querySelector("#labelarchivo");
+
+let imagen = "";
+
+inputFileImage.addEventListener("change", cargar);
+
+function cargar(ev) {
+  let arch = new FileReader();
+  arch.readAsDataURL(ev.target.files[0]);
+  /*imagen = ev.target.files[0];*/
+  arch.addEventListener("load", leer);
+}
+
+function leer(ev) {
+  document.getElementById("box__imagen").style.backgroundImage =
+    "url('" + ev.target.result + "')";
+  imagen = ev.target.result;
+  let nombreArchivo = inputFileImage.files[0].name;
+  if (labelFileImage.value != "") {
+    labelFileImage.innerHTML = nombreArchivo;
+  } else {
+    labelFileImage.innerHTML = "Selecciona una foto...";
+  }
+
+  // document
+  //   .querySelector(".archivo__faltante")
+  //   .parentElement.classList.remove("input__invalido");
+}
+
 //! ============ < CREACIÓN E INSERCIÓN DE NUEVOS DATOS EN EL DB.JSON >
 const formulario = document.querySelector("[data-form-productC]"); //FORMULARIO DEL MODAL CREATE
 // buttonSubmit.disabled = true;
@@ -61,99 +93,113 @@ const modalE = document.querySelector(".main-modalE"); // MODAL
 
 formulario.addEventListener("submit", (event) => {
   event.preventDefault();
-  const name = document.querySelector("[data-name]").value;
-  const price = formatearPrice(document.querySelector("[data-price]").value);
-  const category = document.querySelector("[data-category]").value;
-  const description = document.querySelector("[data-description]").value;
 
-  const imageURL = document.querySelector("[data-file]").value;
-  const newimageURL = "../../assets/img/console6.png";
-  const nameimage = document.querySelector("[data-file]").files[0].name;
-  const extimage = nameimage.split(".").pop();
+  if (!imagen) {
+    productService.MostrarMensaje(
+      "Advertencia",
+      "Es obligatorio elegir una foto",
+      "warning"
+    );
+  } else {
+    const name = document.querySelector("[data-name]").value;
+    const price = document.querySelector("[data-price]").value;
+    const category = document.querySelector("[data-category]").value;
+    const description = document.querySelector("[data-description]").value;
+    const idinput = document.querySelector("[data-id]").value;
 
-  const id = uuid.v4();
+    if (idinput.length == 0) {
+      // Se crea
+      //! ============ ACCION PARA LA INSERCIÓN DE LOS DATOS =================
+      console.log("Se crea :" + idinput);
 
-  Swal.fire({
-    title: "¿Estás seguro?",
-    text: "Guardar los datos ingresados",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    cancelButtonText: "Cancelar",
-    confirmButtonText: "Si, guardar",
-  }).then((result) => {
-    if (result.isConfirmed) {
-      // Copiar y guardar la foto del producto
+      // const id = uuid.v4();
 
-      // fs.copyFile(imageURL, "../../assets/img/", (err) => {
-      //   if (err) throw err;
-      //   console.log("se copio");
-      // });
+      Swal.fire({
+        title: "¿Estás seguro?",
+        text: "Guardar los datos ingresados",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "Si, guardar",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          productService
+            .crearProducto(name, price, description, imagen,  category)
+            .then(() => {
+              window.location.href = "../../view/products/create-success.html";
+            })
+            .catch((err) => console.log(err));
+        }
+      });
+    } else {
+      // Se edita
+      //! ============ ACCION PARA LA EDICION DE LOS DATOS =================
+      console.log("Se edita :" + idinput);
 
-      // fs.rename(
-      //   "../../assets/img/" + nameimage,
-      //   "../../assets/img/" + id + "." + extimage,
-      //   (err) => {
-      //     if (err) throw err;
-      //     console.log("se renombro");
-      //   }
-      // );
-
-      // newimageURL = "../../assets/img/" + id + "." + extimage;
-
-      productService
-        .crearProducto(name, price, description, newimageURL, category, id)
-        .then(() => {
-          window.location.href = "../../view/products/create-success.html";
-        })
-        .catch((err) => console.log(err));
+      Swal.fire({
+        title: "¿Estás seguro?",
+        text: "Actualizar con los datos ingresados",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "Cancelar",
+        confirmButtonText: "Si, editar",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          productService
+            .actualizarProducto(idinput, name, price, category, description, imagen)
+            .then(() => {
+              window.location.href = "../../view/products/update-success.html";
+            })
+            .catch((err) => console.log(err));
+        }
+      });
     }
-  });
+  }
 });
 
 //! ========== OBTENER Y MOSTRAR DATOS A ACTUALIZAR ============
 const obtenerInformacion = async (id) => {
-  formularioE.reset();
+  formulario.reset();
 
   // const id = document.querySelector(".id-product").value;
   if (id === null) {
-    productService.MostrarMensaje(
-      "Error",
-      "Algo salió mal al cargar los datos",
-      "error"
-    );
+    productService.MostrarMensaje("Error", "No hay ID", "error");
   }
 
-  const name = document.querySelector("[data-nameE]");
-  const price = document.querySelector("[data-priceE]");
-  const category = document.querySelector("[data-categoryE]");
-  const description = document.querySelector("[data-descriptionE]");
-  const imageURL = document.querySelector("[data-imageE]");
-  const idinput = document.querySelector("[data-idE]");
+  const name = document.querySelector("[data-name]");
+  const price = document.querySelector("[data-price]");
+  const category = document.querySelector("[data-category]");
+  const description = document.querySelector("[data-description]");
+  const idinput = document.querySelector("[data-id]");
+  const imagenDiv = document.querySelector(".agregar__imagen-div");
+
   try {
     const product = await productService.detalleProducto(id);
 
-    if (product.name && product.price && product.category && product.imageURL) {
+    if (product.name && product.category && product.imageURL) {
       name.value = product.name;
       price.value = product.price;
       category.value = product.category;
       description.value = product.description;
-      imageURL.value = product.imageURL;
+      imagen = product.imageURL;
       idinput.value = id;
 
-      modalE.classList.remove("fadeOut");
-      modalE.classList.add("fadeIn");
-      modalE.style.display = "flex";
+      imagenDiv.style.backgroundImage = `url("${product.imageURL}")`;
+
+      modal.classList.remove("fadeOut");
+      modal.classList.add("fadeIn");
+      modal.style.display = "flex";
+      console.log(imagen);
     } else {
       throw new Error();
     }
   } catch (error) {
-    productService.MostrarMensaje(
-      "Error",
-      "Algo salió mal al actualizar los datos",
-      "error"
-    );
+    productService.MostrarMensaje("Error", error + "", "error");
+    console.log(error);
   }
 };
 
@@ -166,8 +212,10 @@ const formatearPrice = (price) => {
     let decimal = array[1] + "";
     if (decimal.length == 1) {
       newprice = price + "0";
-    } else {
+    } else if (decimal == "") {
       newprice = price + "00";
+    } else {
+      newprice = price;
     }
   } else {
     newprice = price + ".00";
@@ -175,39 +223,6 @@ const formatearPrice = (price) => {
 
   return newprice;
 };
-
-//! ============ ACCION PARA LA EDICION DE LOS DATOS =================
-const formularioE = document.querySelector("[data-form-productE]"); //FORMULARIO DEL MODAL EDICION
-
-formularioE.addEventListener("submit", (evento) => {
-  evento.preventDefault();
-  const id = document.querySelector("[data-idE]").value;
-  const name = document.querySelector("[data-nameE]").value;
-  const price = formatearPrice(document.querySelector("[data-priceE]").value);
-  const category = document.querySelector("[data-categoryE]").value;
-  const description = document.querySelector("[data-descriptionE]").value;
-  const imageURL = document.querySelector("[data-imageE]").value;
-
-  Swal.fire({
-    title: "¿Estás seguro?",
-    text: "Actualizar con los datos ingresados",
-    icon: "warning",
-    showCancelButton: true,
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
-    cancelButtonText: "Cancelar",
-    confirmButtonText: "Si, editar",
-  }).then((result) => {
-    if (result.isConfirmed) {
-      productService
-        .actualizarProducto(id, name, price, category, description, imageURL)
-        .then(() => {
-          window.location.href = "../../view/products/update-success.html";
-        })
-        .catch((err) => console.log(err));
-    }
-  });
-});
 
 //! ========== ACCIONES QUE SE REALIZAN CUANDO SE CARGA TODO EL DOM
 window.addEventListener("load", () => {
@@ -248,6 +263,6 @@ window.addEventListener("load", () => {
             .catch((err) => console.log(err));
         }
       });
-    } 
+    }
   });
 });

@@ -13,13 +13,13 @@ const listProducts = () =>
     .catch((error) => alert(error));
 
 //! CREAR DATOS
-const crearProducto = (name, price, description, imageURL,  category, id) => {
+const crearProducto = (name, price, description, imageURL,  category) => {
   return fetch("https://64a6171400c3559aa9c056d8.mockapi.io/products", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({  name, price, description, imageURL, category, id}),
+    body: JSON.stringify({  name, price, description, imageURL, category}),
   });
 };
 
