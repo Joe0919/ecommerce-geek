@@ -10,7 +10,6 @@ window.addEventListener("load", () => {
   const inputs = document.querySelectorAll(".contacto__form-input");
 
   inputs.forEach(function (input) {
-    console.log(input);
 
     input.addEventListener("blur", () => {
         if (input.value) {

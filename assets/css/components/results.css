@@ -1,5 +1,9 @@
 @import url("../style.css");
 
+.resultados {
+  display: none;
+}
+
 .resultados__header {
   display: flex;
   justify-content: center;
@@ -52,4 +56,47 @@
   -webkit-line-clamp: 2;
   text-align: justify;
   line-height: 1.3rem;
+}
+
+.notfound {
+  display: block;
+}
+
+.notfound__img {
+  background: url("../../img/not-found.jpg") no-repeat center / cover;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.notfound__div {
+  display: flex;
+  justify-content: space-between;
+  border-left: 0.5rem solid #c00;
+  padding: 1rem;
+  border-radius: 0.8rem 0 0 0.8rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 0 4rem;
+}
+
+.div {
+  flex: none;
+  width: calc((100% - 1.2rem) / 2);
+  padding: 4rem 0;
+}
+
+.notfound__text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  row-gap: 1rem;
+}
+
+.notfound__text div {
+  padding: 0 0.7rem;
+}
+
+.notfound__text div h2 {
+  color: var(--font-color4);
+  margin: 1rem 0;
 }

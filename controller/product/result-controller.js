@@ -37,8 +37,8 @@ productService
       const nombre = name.toLowerCase();
 
       if (nombre.includes(buscarlower)) {
-        // document.querySelector(".bloqueo_error").style.display = "none";
-        // document.querySelector(".bloqueo_title").style.display = "block";
+        document.querySelector(".notfound").style.display = "none";
+        document.querySelector(".resultados").style.display = "block";
         const nuevaLinea = crearNuevaLinea(
           name,
           price,
@@ -51,6 +51,6 @@ productService
       }
     });
   })
-  .catch((error) => alert("Oops! Error. Comuniquese con Matr3"));
+  .catch((error) => alert("Hubo un error"));
 
 input_search.value = buscar_prod;

@@ -127,8 +127,13 @@ formulario.addEventListener("submit", (event) => {
         if (result.isConfirmed) {
           productService
             .crearProducto(name, price, description, imagen,  category)
-            .then(() => {
-              window.location.href = "../../view/products/create-success.html";
+            .then((response) => {
+
+              if (response.status < 500 && response.status >= 400) {
+                productService.MostrarMensaje("Archivo muy grande","Elija una imagen menos pesada.","error");
+              } else {
+                window.location.href = "../../view/products/create-success.html";
+              }
             })
             .catch((err) => console.log(err));
         }
@@ -151,8 +156,13 @@ formulario.addEventListener("submit", (event) => {
         if (result.isConfirmed) {
           productService
             .actualizarProducto(idinput, name, price, category, description, imagen)
-            .then(() => {
-              window.location.href = "../../view/products/update-success.html";
+              .then((response) => {
+
+                if (response.status < 500 && response.status >= 400) {
+                  productService.MostrarMensaje("Archivo muy grande","Elija una imagen menos pesada.","error");
+                } else {
+                  window.location.href = "../../view/products/update-success.html";
+                }
             })
             .catch((err) => console.log(err));
         }
