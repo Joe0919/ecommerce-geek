@@ -25,10 +25,11 @@
                         <h1 class="alura">Alura<span class="geek">Geek</span></h1>
                     </a>
                     <div class="search-wrapper">
-                        <input class="search-input" id="search-input" type="text" placeholder="¿Qué deseas Buscar?" onkeypress="Enter(event)">
+                        <input class="search-input" id="search-input" type="text" placeholder="¿Qué deseas Buscar?"
+                            onkeypress="Enter(event)">
                         <button class="btn-search" title="Buscar" id="btn-search">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none"
+                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 class="feather feather-search" viewBox="0 0 24 24">
                                 <defs></defs>
                                 <circle cx="11" cy="11" r="8"></circle>
@@ -82,14 +83,14 @@
                 <h2 class="title_similar">Tambien te puede interesar:</h2>
             </div>
             <div class="slide-container swiper">
-                <div class="slide-content">
+                <div class="slide-content slide-contentsimilares">
                     <div class="card-wrapper swiper-wrapper" data-similares>
-                       
+
                     </div>
                 </div>
 
-                <div class="swiper-button-next swiper-navBtn"></div>
-                <div class="swiper-button-prev swiper-navBtn"></div>
+                <div class="swiper-button-next swiper-navBtn navBtn-nextS"></div>
+                <div class="swiper-button-prev swiper-navBtn navBtn-prevS"></div>
                 <div class="swiper-pagination"></div>
             </div>
         </section>
@@ -155,6 +156,8 @@
             </div>
         </div>
     </section>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"
+        integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
     <script src="../../assets/js/swiper-bundle.min.js"></script>
     <script src="../../assets/js/carousel.js"></script>
     <script type="module" src="../../controller/product/detail-product.js"></script>

@@ -77,15 +77,25 @@
   cursor: pointer;
   color: #86939e;
 }
-.inc {
+
+.dec {
   border-top-left-radius: 15px;
   border-bottom-left-radius: 15px;
   border-right: none;
 }
-.dec {
+
+.inc:active{
+  background-color: #2980B9;
+  color: white;
+}
+.inc {
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   border-left: none;
+}
+.dec:active{
+  background-color: #C0392B;
+  color: white;
 }
 
 #size {

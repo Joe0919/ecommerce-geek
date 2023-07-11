@@ -37,12 +37,12 @@ const crearLineaDescripcion = (
                     <div class="info__butons">
                         <div class="size-config">
                             <span>Cantidad: </span>
-                            <div class="size">
-                                <div class="inc button"><i class="fa-solid fa-plus"></i></div>
+                            <div class="size" >
+                                <div class="dec button"><i class="fa-solid fa-minus ico"></i></div>
                                 <div id="size-wrapper">
                                     <input type="text" name="" id="size" value="1">
                                 </div>
-                                <div class="dec button"><i class="fa-solid fa-minus"></i></div>
+                                <div class="inc button"><i class="fa-solid fa-plus ico"></i></div>
                             </div>
                         </div>
                         <div class="butons">
@@ -82,7 +82,7 @@ productService
     );
     section_detail.appendChild(newLine);
   })
-  .catch((error) => alert(error));
+  .catch((error) => console.log(error));
 
 const crearSimilares = (name, price, category, imageURL, id) => {
   const linea2 = document.createElement("div");
@@ -128,3 +128,61 @@ productService
     });
   })
   .catch((error) => console.log(error));
+
+//! ========== ACCIONES QUE SE REALIZAN CUANDO SE CARGA TODO EL DOM
+window.addEventListener("load", () => {
+  //! ========== REALIZAMOS UNA DELEGACIÓN DE EVENTOS PARA LOS BOTONES DE EDICIÓN Y BORRADO DE PRODUCTOS
+
+  section_detail.addEventListener("click", (e) => {
+    let elemento = e.target;
+    let elementoTag = e.target.tagName;
+    let val = 0;
+    let input = "";
+
+    if (elemento && (elementoTag === "DIV" && elemento.classList[1] == "button") ||
+      (elementoTag === "I" && elemento.classList[2] == "ico")) {
+
+      input = elemento.closest(".size").children[1].children[0];
+      val = Number(input.value);
+
+      if (elemento.classList[0] === "inc" || elemento.classList[1] == "fa-plus"
+      ) {
+        val = val + 1;
+      } else {
+        if (val > 0) {
+          val = val - 1;
+        } else {
+          val = 0;
+        }
+      }
+      input.value = val;
+    }
+
+    // if (elemento && (elementoTag === "DIV" || elementoTag === "I") &&
+    // (elemento.classList[0] === "inc" || elemento.classList[1] == "fa-plus")) {
+
+    //   input = elemento.closest('.size').children[1].children[0]
+
+    //   val =  Number(input.value)
+
+    //   val = val + 1;
+
+    //   input.value = val;
+
+    // }else if(elemento && (elementoTag === "DIV" || elementoTag === "I") &&
+    // (elemento.classList[0] === "dec" || elemento.classList[1] == "fa-minus")){
+
+    //   input = elemento.closest('.size').children[1].children[0]
+
+    //   val =  Number(input.value)
+
+    //   if (val > 0) {
+    //     val = val - 1;
+    //   }else{
+    //   val = 0;
+    //   }
+
+    //   input.value = val;
+    // }
+  });
+});
