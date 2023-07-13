@@ -15,7 +15,7 @@ let swiper1 = new Swiper(".slide-content1", {
     0: {
       slidesPerView: 1,
     },
-    381: {
+    440: {
       slidesPerView: 2,
     },
     575: {
@@ -27,7 +27,7 @@ let swiper1 = new Swiper(".slide-content1", {
     993: {
       slidesPerView: 4,
     },
-    1200: {
+    1282: {
       slidesPerView: 6,
     }
   },
@@ -50,7 +50,7 @@ let swiper2 = new Swiper(".slide-content2", {
     0: {
       slidesPerView: 1,
     },
-    381: {
+    440: {
       slidesPerView: 2,
     },
     575: {
@@ -62,7 +62,7 @@ let swiper2 = new Swiper(".slide-content2", {
     993: {
       slidesPerView: 4,
     },
-    1200: {
+    1282: {
       slidesPerView: 6,
     }
   },
@@ -85,7 +85,7 @@ let swiper3 = new Swiper(".slide-content3", {
     0: {
       slidesPerView: 1,
     },
-    381: {
+    440: {
       slidesPerView: 2,
     },
     575: {
@@ -97,7 +97,7 @@ let swiper3 = new Swiper(".slide-content3", {
     993: {
       slidesPerView: 4,
     },
-    1200: {
+    1282: {
       slidesPerView: 6,
     }
   },
@@ -120,7 +120,7 @@ let swiperSimilares = new Swiper(".slide-contentsimilares", {
     0: {
       slidesPerView: 1,
     },
-    381: {
+    440: {
       slidesPerView: 2,
     },
     575: {
@@ -132,7 +132,7 @@ let swiperSimilares = new Swiper(".slide-contentsimilares", {
     993: {
       slidesPerView: 4,
     },
-    1200: {
+    1282: {
       slidesPerView: 6,
     }
   },

@@ -27,6 +27,7 @@
 .description__product-photo {
   width: 35%;
   height: 35%;
+  object-fit: cover;
 }
 .description__product-info {
   width: 60%;
@@ -157,5 +158,32 @@
   }
   100% {
     transform: translate(2px, 0px);
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .description__product {
+    flex-direction: column;
+    width: 100%;
+  }
+  .description__product-photo {
+    width: 90%;
+    height: 90%;
+  }
+  .description__product-info {
+    width: 90%;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .butons{
+    flex-direction: column;
+  }
+  .butons .boton{
+    width: 100%;
+  }
+  .info__butons > .boton{
+    width: 100%
+
   }
 }

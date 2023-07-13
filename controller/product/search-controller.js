@@ -8,7 +8,7 @@ const addNewLine = (search_value) => {
   linea.classList.add("search-wrapper");
   linea.setAttribute("id", "search-wrapper1");
   const contenido = `                    
-    <input class="search-home search-input" id="search-input" type="text" placeholder="¿Qué deseas Buscar?" onkeypress="Enter(event)">
+    <input class=" search-input" id="search-input" type="text" placeholder="¿Qué deseas Buscar?" onkeypress="Enter(event)">
     <button class="btn-search" title="Buscar" id="btn-search">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
             stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
