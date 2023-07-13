@@ -666,7 +666,7 @@ body {
 
 } */
 /* Escritorio grande */
-@media only screen and (min-width: 992px) and (max-width: 1199px) {
+@media only screen and (max-width: 1199px) {
   .container {
     max-width: 100%;
     padding: 2rem 2rem;
@@ -693,7 +693,7 @@ body {
   }
 }
 /* Escritorio pequeño / tablet */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
+@media only screen and (max-width: 991px) {
   .header {
     background-color: #dc7633;
   }
@@ -730,7 +730,7 @@ body {
   }
 }
 /* Tablets y phablets */
-@media only screen and (min-width: 576px) and (max-width: 767px) {
+@media only screen and (max-width: 767px) {
   .header {
     background-color: #f9e79f;
   }
