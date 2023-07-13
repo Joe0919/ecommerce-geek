@@ -19,8 +19,12 @@ const addNewLine = (name, price, category, imageURL, id) => {
     <a href="../../view/products/description-product.html?id=${id}&category=${category}">
       <i class="fa-solid fa-eye btn-ver"></i>
     </a>
-    <i class="fa-solid fa-pen btn-editar" title="Editar"></i>
-    <i class="fa-solid fa-trash btn-delete" id="${id}" title="Eliminar"></i>
+    <a>
+      <i class="fa-solid fa-pen btn-editar" title="Editar"></i>
+    </a>
+    <a >
+      <i class="fa-solid fa-trash btn-delete" id="${id}" title="Eliminar"></i>
+    </a>
     </div>
     <input class="id-product" name="id-product" type="hidden" value="${id}">
       `;
@@ -110,7 +114,6 @@ formulario.addEventListener("submit", (event) => {
     if (idinput.length == 0) {
       // Se crea
       //! ============ ACCION PARA LA INSERCIÓN DE LOS DATOS =================
-      console.log("Se crea :" + idinput);
 
       // const id = uuid.v4();
 
@@ -141,7 +144,6 @@ formulario.addEventListener("submit", (event) => {
     } else {
       // Se edita
       //! ============ ACCION PARA LA EDICION DE LOS DATOS =================
-      console.log("Se edita :" + idinput);
 
       Swal.fire({
         title: "¿Estás seguro?",
@@ -200,10 +202,10 @@ const obtenerInformacion = async (id) => {
 
       imagenDiv.style.backgroundImage = `url("${product.imageURL}")`;
 
-      modal.classList.remove("fadeOut");
-      modal.classList.add("fadeIn");
-      modal.style.display = "flex";
-      console.log(imagen);
+      const modal = new Modal(document.querySelector("#defaultModal"), null);
+
+      modal.show();
+
     } else {
       throw new Error();
     }
@@ -267,7 +269,6 @@ window.addEventListener("load", () => {
           productService
             .eliminarProducto(id)
             .then((respuesta) => {
-              console.log(respuesta);
               window.location.reload();
             })
             .catch((err) => console.log(err));
