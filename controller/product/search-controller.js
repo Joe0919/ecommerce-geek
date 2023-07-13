@@ -25,15 +25,15 @@ const addNewLine = (search_value) => {
   const search = document.querySelector("#search-wrapper1");
 
   if (search !== null) {
-    search_value = search.querySelector(".search-input").value;
+    search_value = search.querySelector("#search-input").value;
 
     const padre = search.parentNode;
 
-    padre.removeChild(search);
+    const old =  padre.removeChild(search);
 
-    console.log(search_value);
     if (search_value.length != 0) {
-        search.querySelector(".search-input").value = search_value;
+      const input = search.querySelector("#search-input");
+      input.value = search_value;
     }
   }
 

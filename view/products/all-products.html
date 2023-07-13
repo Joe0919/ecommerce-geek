@@ -19,51 +19,43 @@
 
     <header class="header container1 ">
         <nav class="header__nav">
-            <div class="header__nav-list">
-                <div class="nav-list-item">
-                    <a class="nav-list-link" href="../../index.html">
-                        <i class="fa-solid fa-gamepad"></i>
-                        <p class="alura">Alura<span class="geek">Geek</span></p>
-                    </a>
-                    <div class="search-wrapper">
-                        <input class="search-input" id="search-input" type="text" placeholder="¿Qué deseas Buscar?" onkeypress="Enter(event)">
-                        <button class="btn-search" title="Buscar" id="btn-search">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                class="feather feather-search" viewBox="0 0 24 24">
-                                <defs></defs>
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <path d="M21 21l-4.35-4.35"></path>
-                            </svg>
-                        </button>
+            <div class="header__nav-list" id="header__nav-list">
+                <!-- <div class="nav-list-item"> -->
+                    <div class="div-logo">
+                        <a class="nav-list-link" href="../../index.html">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <h1 class="alura">Alura<span class="geek">Geek</span></h1>
+                        </a>
                     </div>
-                </div>
 
-                <div title="Cambiar Tema">
-                    <label class="label" id="theme-switch">
-                        <span class="toggle" id="toggle">
-                            <input class="toggle-input" type="checkbox" id="checkbox_theme" />
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                                viewBox="0 0 32 32" id="moon" class="icon">
-                                <title>moon-fill</title>
-                                <path
-                                    d="M24.633 22.184c-8.188 0-14.82-6.637-14.82-14.82 0-2.695 0.773-5.188 2.031-7.363-6.824 1.968-11.844 8.187-11.844 15.644 0 9.031 7.32 16.355 16.352 16.355 7.457 0 13.68-5.023 15.648-11.844-2.18 1.254-4.672 2.028-7.367 2.028z">
-                                </path>
-                            </svg>
+                <!-- </div>
+                <div class="nav-list-item-right"> -->
 
-                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
-                                viewBox="0 0 32 32" id="sun" class="icon">
-                                <title>sun-fill</title>
-                                <path
-                                    d="M16.001 8c-4.418 0-8 3.582-8 8s3.582 8 8 8c4.418 0 7.999-3.582 7.999-8s-3.581-8-7.999-8v0zM14 2c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM4 6c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM2 14c1.105 0 2 0.895 2 2 0 1.107-0.895 2-2 2s-2-0.893-2-2c0-1.105 0.895-2 2-2zM4 26c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM14 30c0-1.109 0.895-2 2-2 1.108 0 2 0.891 2 2 0 1.102-0.892 2-2 2-1.105 0-2-0.898-2-2zM24 26c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM30 18c-1.104 0-2-0.896-2-2 0-1.107 0.896-2 2-2s2 0.893 2 2c0 1.104-0.896 2-2 2zM24 6c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2z">
-                                </path>
-                            </svg>
+                    <div title="Cambiar Tema" class="theme">
+                        <label class="label" id="theme-switch">
+                            <span class="toggle" id="toggle">
+                                <input class="toggle-input" type="checkbox" id="checkbox_theme" />
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                    viewBox="0 0 32 32" id="moon" class="icon">
+                                    <title>moon-fill</title>
+                                    <path
+                                        d="M24.633 22.184c-8.188 0-14.82-6.637-14.82-14.82 0-2.695 0.773-5.188 2.031-7.363-6.824 1.968-11.844 8.187-11.844 15.644 0 9.031 7.32 16.355 16.352 16.355 7.457 0 13.68-5.023 15.648-11.844-2.18 1.254-4.672 2.028-7.367 2.028z">
+                                    </path>
+                                </svg>
 
-                            <span class="toggle__btn" id="toggle__btn" />
-                        </span>
-                    </label>
-                </div>
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32"
+                                    viewBox="0 0 32 32" id="sun" class="icon">
+                                    <title>sun-fill</title>
+                                    <path
+                                        d="M16.001 8c-4.418 0-8 3.582-8 8s3.582 8 8 8c4.418 0 7.999-3.582 7.999-8s-3.581-8-7.999-8v0zM14 2c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM4 6c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM2 14c1.105 0 2 0.895 2 2 0 1.107-0.895 2-2 2s-2-0.893-2-2c0-1.105 0.895-2 2-2zM4 26c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM14 30c0-1.109 0.895-2 2-2 1.108 0 2 0.891 2 2 0 1.102-0.892 2-2 2-1.105 0-2-0.898-2-2zM24 26c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2zM30 18c-1.104 0-2-0.896-2-2 0-1.107 0.896-2 2-2s2 0.893 2 2c0 1.104-0.896 2-2 2zM24 6c0-1.105 0.895-2 2-2s2 0.895 2 2c0 1.105-0.895 2-2 2s-2-0.895-2-2z">
+                                    </path>
+                                </svg>
 
+                                <span class="toggle__btn" id="toggle__btn" />
+                            </span>
+                        </label>
+                    </div>
+                <!-- </div> -->
             </div>
         </nav>
     </header>
@@ -81,30 +73,32 @@
             </section>
         </section>
         <section class="contacto container bg-blue-sky" id="contacto">
-            <div class="contacto__logo">
-                <i class="fa-solid fa-gamepad logo"></i>
-                <h1 class="alura">Alura<span class="geek">Geek</span></h1>
+            <div class="contacto__text">
+                <div class="contacto__logo">
+                    <i class="fa-solid fa-gamepad logo"></i>
+                    <h1 class="alura">Alura<span class="geek">Geek</span></h1>
+                </div>
+                <ul class="contacto__list">
+                    <li class="contacto__list-item">
+                        <a class="contacto__list-link">¿Quienes Somos?</a>
+                    </li>
+                    <li class="contacto__list-item">
+                        <a class="contacto__list-link">Politica de Privacidad</a>
+                    </li>
+                    <li class="contacto__list-item">
+                        <a class="contacto__list-link">Programa de Fidelidad</a>
+                    </li>
+                    <li class="contacto__list-item">
+                        <a class="contacto__list-link">Nuestras Tiendas</a>
+                    </li>
+                    <li class="contacto__list-item">
+                        <a class="contacto__list-link">¿Quiero ser Franquisiado?</a>
+                    </li>
+                    <li class="contacto__list-item">
+                        <a class="contacto__list-link">Anuncie Aqui</a>
+                    </li>
+                </ul>
             </div>
-            <ul class="contacto__list">
-                <li class="contacto__list-item">
-                    <a class="contacto__list-link">¿Quienes Somos?</a>
-                </li>
-                <li class="contacto__list-item">
-                    <a class="contacto__list-link">Politica de Privacidad</a>
-                </li>
-                <li class="contacto__list-item">
-                    <a class="contacto__list-link">Programa de Fidelidad</a>
-                </li>
-                <li class="contacto__list-item">
-                    <a class="contacto__list-link">Nuestras Tiendas</a>
-                </li>
-                <li class="contacto__list-item">
-                    <a class="contacto__list-link">¿Quiero ser Franquisiado?</a>
-                </li>
-                <li class="contacto__list-item">
-                    <a class="contacto__list-link">Anuncie Aqui</a>
-                </li>
-            </ul>
             <form class="contacto__form" action="https://formsubmit.co/joel09llalli@gmail.com" name="contacto__form"
                 method="post">
                 <h2 class="contacto__title titulo2">Hable con Nosotros</h2>

@@ -16,33 +16,19 @@
 <body>
     <header class="header container1">
         <nav class="header__nav">
-            <div class="header__nav-list">
-                <div class="nav-list-item">
-                    <a class="nav-list-link" href="/">
-                        <i class="fa-solid fa-gamepad"></i>
-                        <h1 class="alura">Alura<span class="geek">Geek</span></h1>
-                    </a>
-                    <div class="search-wrapper">
-                        <input class="search-input" id="search-input" type="text" placeholder="¿Qué deseas Buscar?" onkeypress="Enter(event)">
-                        <button class="btn-search" title="Buscar" id="btn-search">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor"
-                                stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                class="feather feather-search" viewBox="0 0 24 24">
-                                <defs></defs>
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <path d="M21 21l-4.35-4.35"></path>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-                <div class="nav-list-item-right">
-                    <div>
-                        <a href="../../view/login/" class="boton btn-secundary" title="Login">
-                            <i class="fa-solid fa-user"></i>
-                            <span>Login</span>
+            <div class="header__nav-list" id="header__nav-list">
+                <!-- <div class="nav-list-item"> -->
+                    <div class="div-logo">
+                        <a class="nav-list-link" href="../../index.html">
+                            <i class="fa-solid fa-gamepad"></i>
+                            <h1 class="alura">Alura<span class="geek">Geek</span></h1>
                         </a>
                     </div>
-                    <div title="Cambiar Tema">
+
+                <!-- </div>
+                <div class="nav-list-item-right"> -->
+
+                    <div title="Cambiar Tema" class="theme">
                         <label class="label" id="theme-switch">
                             <span class="toggle" id="toggle">
                                 <input class="toggle-input" type="checkbox" id="checkbox_theme" />
@@ -66,7 +52,7 @@
                             </span>
                         </label>
                     </div>
-                </div>
+                <!-- </div> -->
             </div>
         </nav>
     </header>
@@ -101,30 +87,32 @@
         </section>
 
         <section class="contacto container bg-blue-sky" id="contacto">
-            <div class="contacto__logo">
-                <i class="fa-solid fa-gamepad logo"></i>
-                <h1 class="alura">Alura<span class="geek">Geek</span></h1>
+            <div class="contacto__text">
+                <div class="contacto__logo">
+                    <i class="fa-solid fa-gamepad logo"></i>
+                    <h1 class="alura">Alura<span class="geek">Geek</span></h1>
+                </div>
+                <ul class="contacto__list">
+                    <li class="contacto__list-item">
+                        <a class="contacto__list-link">¿Quienes Somos?</a>
+                    </li>
+                    <li class="contacto__list-item">
+                        <a class="contacto__list-link">Politica de Privacidad</a>
+                    </li>
+                    <li class="contacto__list-item">
+                        <a class="contacto__list-link">Programa de Fidelidad</a>
+                    </li>
+                    <li class="contacto__list-item">
+                        <a class="contacto__list-link">Nuestras Tiendas</a>
+                    </li>
+                    <li class="contacto__list-item">
+                        <a class="contacto__list-link">¿Quiero ser Franquisiado?</a>
+                    </li>
+                    <li class="contacto__list-item">
+                        <a class="contacto__list-link">Anuncie Aqui</a>
+                    </li>
+                </ul>
             </div>
-            <ul class="contacto__list">
-                <li class="contacto__list-item">
-                    <a class="contacto__list-link">¿Quienes Somos?</a>
-                </li>
-                <li class="contacto__list-item">
-                    <a class="contacto__list-link">Politica de Privacidad</a>
-                </li>
-                <li class="contacto__list-item">
-                    <a class="contacto__list-link">Programa de Fidelidad</a>
-                </li>
-                <li class="contacto__list-item">
-                    <a class="contacto__list-link">Nuestras Tiendas</a>
-                </li>
-                <li class="contacto__list-item">
-                    <a class="contacto__list-link">¿Quiero ser Franquisiado?</a>
-                </li>
-                <li class="contacto__list-item">
-                    <a class="contacto__list-link">Anuncie Aqui</a>
-                </li>
-            </ul>
             <form class="contacto__form" action="https://formsubmit.co/joel09llalli@gmail.com" name="contacto__form"
                 method="post">
                 <h2 class="contacto__title titulo2">Hable con Nosotros</h2>

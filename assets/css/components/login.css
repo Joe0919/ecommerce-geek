@@ -1,7 +1,7 @@
 .Form {
   width: 100%;
   max-width: 400px;
-  margin: auto;
+  margin: 3rem auto;
 }
 
 .Form-title {
@@ -243,10 +243,10 @@
   border-radius: 0.25em;
   box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.25);
   box-sizing: border-box;
-
   text-align: center;
-  width: 500px;
-  height: 75vh;
+  width: 90%;
+  max-width: 560px;
+  /* height: 75vh; */
   margin: 0 auto;
 }
 
@@ -283,4 +283,9 @@
   100% {
     opacity: 0;
   }
+}
+@media only screen and (max-width: 380px) {
+ .content{
+  width: 98%;
+ }
 }
