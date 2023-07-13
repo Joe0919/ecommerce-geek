@@ -102,7 +102,7 @@ formulario.addEventListener("submit", (event) => {
     );
   } else {
     const name = document.querySelector("[data-name]").value;
-    const price = document.querySelector("[data-price]").value;
+    const price = formatearPrice(document.querySelector("[data-price]").value);
     const category = document.querySelector("[data-category]").value;
     const description = document.querySelector("[data-description]").value;
     const idinput = document.querySelector("[data-id]").value;

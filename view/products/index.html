@@ -42,18 +42,16 @@
                             </h1>
                         </div>
                         <div class="w-full mr-auto ml-auto mt-4">
-                            <div class="bg-white shadow-lg rounded-md px-3 py-3 mb-3 ml-auto mr-auto pt-4"
+                            <div class="bg-white shadow-lg rounded-md px-3 py-2 mb-2 ml-auto mr-auto pt-4"
                                 data-form-product>
                                 <div class="mb-4">
                                     <label
                                         class="block text-gray-700 text-sm font-medium mb-2 after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-bold text-slate-700"
-                                        for="username"> Nombre
-                                        del
-                                        Producto: </label>
+                                        for="username"> Nombre del Producto: </label>
                                     <input
                                         class="shadow-sm appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 text-sm leading-tight focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
                                         id="username" type="text" placeholder="Ingrese nombre..." data-name required
-                                        minlength="3">
+                                        minlength="3" maxlength="20">
                                 </div>
                                 <div class="mb-4 flex gap-x-5">
                                     <div class="w-1/2">
@@ -92,7 +90,7 @@
                                     </label>
                                     <textarea placeholder="Ingrese descripcion..." data-description
                                         class="shadow-sm appearance-none border border-gray-400 rounded w-full py-2 px-3 text-gray-700 text-sm leading-tight focus:border-indigo-500 focus:outline-none focus:ring-1 focus:ring-indigo-500"
-                                        cols="30" rows="3"></textarea>
+                                        cols="30" rows="3" maxlength="150"></textarea>
 
                                 </div>
                                 <div class="flex">
