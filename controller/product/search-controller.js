@@ -1,5 +1,5 @@
-const header_list = document.querySelector(".header__nav-list");
-const header_nav = document.querySelector(".header__nav");
+const header_list = document.getElementById("header__nav-list");
+const header_nav = document.getElementById("header__nav");
 const mediaqueryList = window.matchMedia("(max-width: 575px)");
 let search_value = "";
 
@@ -19,27 +19,13 @@ const addNewLine = (search_value) => {
         </svg>
     </button>
       `;
-
   linea.innerHTML = contenido;
-
-  const search = document.querySelector("#search-wrapper1");
-
-  if (search !== null) {
-    search_value = search.querySelector("#search-input").value;
-
-    const padre = search.parentNode;
-
-    const old =  padre.removeChild(search);
-
-    if (search_value.length != 0) {
-      const input = search.querySelector("#search-input");
-      input.value = search_value;
-    }
-  }
 
   return linea;
 };
 
+
+//Dibujamos el campo de busqueda dependiendo el tamaño especificado de la pantalla
 if (mediaqueryList.matches) {
   const newLine = addNewLine();
   header_nav.appendChild(newLine);
@@ -48,23 +34,29 @@ if (mediaqueryList.matches) {
   header_list.appendChild(newLine);
 }
 
+// al cambiar el tamaño de pantalla va moviendo el div de la busqueda a un diferente div
 mediaqueryList.addListener((EventoMediaQueryList) => {
+  const search = document.getElementById("search-wrapper1");
   if (EventoMediaQueryList.matches) {
-    const newLine = addNewLine(search_value);
-    header_nav.appendChild(newLine);
+    let fragment = document.createDocumentFragment();
+    fragment.appendChild(search);
+    header_nav.appendChild(fragment);
   } else {
-    const newLine = addNewLine(search_value);
-    header_list.appendChild(newLine);
+    let fragment = document.createDocumentFragment();
+    fragment.appendChild(search);
+    header_list.appendChild(fragment);
   }
 });
+
 
 const btn_search = document.querySelector("#btn-search");
 const input_search = document.querySelector("#search-input");
 
+// Redirijimos segun sea la pagian en que nos encontramos
 btn_search.addEventListener("click", () => {
   if (input_search.value.length != 0) {
     const buscador = input_search.value;
-    if (input_search.classList[0] == "search-home") {
+    if (input_search.closest('.home')) { //verificamos si estamos en la pag de Inicio
       window.location.href = `view/products/results.html?buscar=${buscador}`;
     } else {
       window.location.href = `../../view/products/results.html?buscar=${buscador}`;
@@ -75,11 +67,13 @@ btn_search.addEventListener("click", () => {
   }
 });
 
+
+
 function Enter(event) {
   if (event.code === "Enter") {
     if (input_search.value.length != 0) {
       const buscador = input_search.value;
-      if (input_search.classList[0] == "search-home") {
+      if (input_search.closest('.home')) {
         window.location.href = `view/products/results.html?buscar=${buscador}`;
       } else {
         window.location.href = `../../view/products/results.html?buscar=${buscador}`;

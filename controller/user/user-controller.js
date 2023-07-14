@@ -13,7 +13,6 @@ formulario.addEventListener("submit", (evento) =>{
     .then((respuesta) =>{
         const user = respuesta;
 
-        console.log(user.length);
 
         for(let i = 0; i < user.length; i++){
             

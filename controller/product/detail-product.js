@@ -3,6 +3,8 @@ import { productService } from "../../services/products-service.js";
 const url = new URL(window.location);
 const idp = url.searchParams.get("id");
 const cate = url.searchParams.get("category");
+const cont_similares = document.getElementById("cont-similares");
+let contador = 0;
 
 //backticks
 const crearLineaDescripcion = (
@@ -114,18 +116,24 @@ const crearSimilares = (name, price, category, imageURL, id) => {
 };
 
 const section_similares = document.querySelector("[data-similares]");
-
+//+ Agregamos productos similares
 productService
   .listProducts()
   .then((data) => {
     data.forEach(({ name, price, category, imageURL, id }) => {
       if (cate == category) {
         if (id != idp) {
-          const newLine = crearSimilares(name, price, category, imageURL, id);
-          section_similares.appendChild(newLine);
+          contador++;
+            const newLine = crearSimilares(name, price, category, imageURL, id);
+            section_similares.appendChild(newLine);
         }
       }
     });
+    if (contador == 0) {
+      cont_similares.style.display="none";
+    }else{
+      cont_similares.style.display="block";
+    }
   })
   .catch((error) => console.log(error));
 
@@ -139,13 +147,18 @@ window.addEventListener("load", () => {
     let val = 0;
     let input = "";
 
-    if (elemento && (elementoTag === "DIV" && elemento.classList[1] == "button") ||
-      (elementoTag === "I" && elemento.classList[2] == "ico")) {
-
+    if (
+      (elemento &&
+        elementoTag === "DIV" &&
+        elemento.classList[1] == "button") ||
+      (elementoTag === "I" && elemento.classList[2] == "ico")
+    ) {
       input = elemento.closest(".size").children[1].children[0];
       val = Number(input.value);
 
-      if (elemento.classList[0] === "inc" || elemento.classList[1] == "fa-plus"
+      if (
+        elemento.classList[0] === "inc" ||
+        elemento.classList[1] == "fa-plus"
       ) {
         val = val + 1;
       } else {
