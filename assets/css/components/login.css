@@ -5,25 +5,25 @@
 }
 
 .Form-title {
-  color: #00386a;
+  color: var(--color-logo);
   margin: 0 0 15px;
 }
 
 .Form-description {
-  color: rgba(109, 102, 101, 0.5);
+  color: var(--font-color2);
 }
 
 .Form-fields {
   border-radius: 15px;
   border: 1px solid #c5c1c0;
-  background-color: #fff;
+  background-color: var(--color-bg-form);
   display: flex;
   flex-direction: column;
   padding: 24px 15px;
 }
 
 .Control-label {
-  color: #423e3d;
+  color: var(--font-color6);
   font-weight: bold;
   transition: color 300ms ease;
 }
@@ -46,6 +46,7 @@
   border: 1px solid #c5c1c0;
   padding: 0.6em 0.6em;
   transition: box-shadow 300ms ease-out;
+  /* background-color: #242424; */
 }
 .ControlInput:hover {
   box-shadow: 0 1px 3px rgba(197, 193, 192, 0.4) inset;
@@ -239,7 +240,7 @@
 
 .content {
   display: flex;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: var(--color-bg-content);
   border-radius: 0.25em;
   box-shadow: 0 0 0.25em rgba(0, 0, 0, 0.25);
   box-sizing: border-box;

@@ -6,12 +6,12 @@
 }
 
 .enlace-desc {
-  color: black;
+  color: var(--font-color2);
   font-weight: 600;
   font-size: 1.1rem;
 }
 .enlace-desc > a {
-  color: black;
+  color: var(--font-color2);
   text-decoration: none;
   font-weight: 700;
 }
@@ -31,6 +31,7 @@
 }
 .description__product-info {
   width: 60%;
+  color: var(--color-text-g);
 }
 
 .info__category {
@@ -54,7 +55,7 @@
 }
 
 .black {
-  color: black;
+  color: var(--color-text-b);
 }
 
 .info__desc {

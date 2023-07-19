@@ -246,7 +246,7 @@
     <section class="copyright-area">
         <div class="container1">
             <div class="copyright-text">
-                <p>Copyright &copy; Desarrollado por <strong>Joel Llallihuaman Giraldo</strong>
+                <p>Copyright &copy; Desarrollado con ❤ por <strong>Joel Llallihuaman Giraldo</strong>
                     <br><b>2023</b>
                 </p>
             </div>
@@ -263,10 +263,11 @@
     <script src="../../controller/product/search-controller.js"></script>
     <script src="../../assets/js/toggle.js"></script>
     <script src="../../assets/js/modal.js"></script>
+    <script src="../../assets/js/theme.js"></script>
     <script>
         AOS.init();
 
-        const modal = $("#defaultModal");
+        //FUNCIONES PARA CORREGIR EL CERRAR EL MODAL DESPUES DE MOSTRARLO CON JAVASCRIPT
         $('#close-button').on('click', function (event) {
             $('[modal-backdrop]').remove();
             const modal = new Modal(document.querySelector("#defaultModal"), null);

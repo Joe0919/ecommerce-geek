@@ -12,9 +12,9 @@
 }
 .card {
   border-radius: 25px;
-  background-color: #fff;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
-    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  background-color: var(--color-card);
+  box-shadow: var(--shadow-card1) 0px 6px 12px -2px,
+  var(--shadow-card1) 0px 3px 7px -3px;
   /* height: 340px; */
 }
 
@@ -102,7 +102,7 @@
 
 .job {
   margin: 0;
-  color: var(--secundary);
+  color: var(--font-color1);
 }
 
 .link {
@@ -129,18 +129,18 @@
 .swiper-button-next {
   background: linear-gradient(
     to left,
-    rgba(127, 140, 141, 1) 0%,
-    rgba(204, 209, 209, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
+    var(--shadow-car1) 0%,
+    var(--shadow-car2) 0%,
+    var(--shadow-car3) 100%
   );
   right: 0;
 }
 .swiper-button-prev {
   background: linear-gradient(
     to right,
-    rgba(127, 140, 141, 1) 0%,
-    rgba(204, 209, 209, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
+    var(--shadow-car1) 0%,
+    var(--shadow-car2) 0%,
+    var(--shadow-car3) 100%
   );
   left: 0;
 }
